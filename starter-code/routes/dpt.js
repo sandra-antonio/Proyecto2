@@ -8,6 +8,8 @@ const multer = require('multer');
 const upload = multer({dest: './public/uploads'});
 const hbs = require('hbs');
 
+
+//Get all DPT´s
 router.get('/dpt', (req, res) => {
   dpt.find()
     .then( (dpt) => {
@@ -18,6 +20,28 @@ router.get('/dpt', (req, res) => {
     });
 });
 
+//Get one DPT
+router.get("/dpt/:id", (req, res, next) => {
+  dpt.findById(req.params.id).then(dpt => {
+    res.render("dpts/dpt", { dpt });
+  });
+});
+
+
+//Update a DPT
+router.get("/dpt/edit/:id", (req, res) => {
+  dpt.findById(req.params.id).then(dpt => {
+    res.render("dpts/editdpt", { dpt });
+  });
+});
+
+/* Updating DPT in DB */
+router.post("/dpt/edit/:id", (req, res) => {
+  const { title, genre, plot } = req.body;
+  dpt.findByIdAndUpdate(req.params.id, { title, genre, plot }).then(dpt => {
+    res.redirect("/dpts/catalog");
+  });
+});
 // router.get('/post/new', ensureLoggedIn(), (req, res, next) => {
 //   res.render('post/new');
 // })
