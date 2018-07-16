@@ -14,11 +14,29 @@
 
 <a href="/movies/new" class="btn btn-warning">"Wanna" add one more movie?</a>
 
-{{#each dpt}}
-<ul class="list-group">
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    {{Denom}}
-    <a href="/movies/{{_id}}" span class="badge badge-primary badge-pill">More details</a>
-  </li>
-</ul>
-{{/each}}
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Denominación del Puesto</th>
+      <th scope="col">Area</th>
+      <th scope="col">Colectivo</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each dpt}}
+    <tr>
+      <td>{{Denom}}</td>
+      <td>{{Area}}</td>
+      <td>{{Colectivo}}</td>
+       <td><a href="/dpt/{{_id}}" span class="badge badge-primary badge-pill">More details</a></td>
+    </tr>
+    {{/each}}
+ 
+  </tbody>
+</table>
+
+
+
+
+
