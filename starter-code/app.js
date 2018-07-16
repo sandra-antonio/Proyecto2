@@ -16,7 +16,7 @@ const hbs = require('hbs')
 const multer = require('multer');
 const upload = multer({dest: './public/uploads'});
 
-mongoose.connect('mongodb://localhost:27017/tumblr-lab-development');
+mongoose.connect('mongodb://localhost:27017/proyecto2');
 
 const app = express();
 
