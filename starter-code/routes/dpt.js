@@ -37,9 +37,9 @@ router.get("/dpt/edit/:id", (req, res) => {
 
 /* Updating DPT in DB */
 router.post("/dpt/edit/:id", (req, res) => {
-  const { title, genre, plot } = req.body;
-  dpt.findByIdAndUpdate(req.params.id, { title, genre, plot }).then(dpt => {
-    res.redirect("/dpts/catalog");
+  const { Denom, Area, Colectivo, Mision } = req.body;
+  dpt.findByIdAndUpdate(req.params.id, { Denom, Area, Colectivo, Mision }).then(dpt => {
+    res.redirect('/dpt');
   });
 });
 // router.get('/post/new', ensureLoggedIn(), (req, res, next) => {

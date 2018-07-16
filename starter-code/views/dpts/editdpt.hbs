@@ -38,19 +38,17 @@
     <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputName">Colectivo</label>
-      <input type="text" class="form-control" id="inputName" name="Denom" value="{{dpt.Colectivo}}">
+      <input type="text" class="form-control" id="inputName" name="Colectivo" value="{{dpt.Colectivo}}">
     </div>
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Misión</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2">{{dpt.Mision}}</textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="Mision" rows="2">{{dpt.Mision}}</textarea>
   </div>
-</form>
    <div class="form-group">
     <label for="exampleFormControlTextarea1">Funciones</label>
     <textarea class="form-control" id="Funciones" rows="3">{{dpt.Funciones}}</textarea>
   </div>
-</form>
 {{#each dpt.Tareas}}
  <div class="form-row">
    
@@ -128,9 +126,38 @@
   </div>
 {{/each}}
 
+  {{#each dpt.Condiciones}}
+ <div class="form-row">
+   
+    <div class="form-group col-md-6">
+
+      <label for="inputName">Condiciones - ¿Turnicidad?</label>
+      <input type="text" class="form-control" id="inputName" name="Formacion.titulo" value="{{turnicidad}}">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Condiciones - ¿Colaboradores?</label>
+      <input type="text" class="form-control" id="inputOccupation" name="Formacion.idiomas" value={{Colaboradores}}>
+    </div>
+  </div>
+
+ <div class="form-row">
+   
+    <div class="form-group col-md-6">
+
+      <label for="inputName">Condiciones - ¿Nocturnidad?</label>
+      <input type="text" class="form-control" id="inputName" name="Formacion.titulo" value="{{nocturnidad}}">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Condiciones - ¿Peligro?</label>
+      <input type="text" class="form-control" id="inputOccupation" name="Formacion.idiomas" value={{peligro}}>
+    </div>
+  </div>
+{{/each}}
 
 
+  <button type="submit" class="btn btn-success">Update DPT</button>
 
+</form>
 
 <a href="/movies" class="btn btn-warning">Volver al catálogo de puestos</a>  
 
