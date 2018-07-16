@@ -16,7 +16,7 @@ const hbs = require('hbs')
 const multer = require('multer');
 const upload = multer({dest: './public/uploads'});
 
-mongoose.connect('mongodb://localhost:27017/tumblr-lab-development');
+mongoose.connect('mongodb://localhost:27017/proyecto2');
 
 const app = express();
 
@@ -109,9 +109,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 const index = require('./routes/index');
 const authRoutes = require('./routes/authentication');
 const postRoutes = require('./routes/post')
+const dptRoutes = require('./routes/dpt')
 app.use('/', index);
 app.use('/', authRoutes);
 app.use('/', postRoutes);
+app.use('/', dptRoutes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

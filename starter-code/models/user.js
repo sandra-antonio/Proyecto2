@@ -8,6 +8,7 @@ const pictureSchema = Schema({
 }, {timestamps: {createdAt: "created_at", updatedAt: "updated_at"}});
 
 const UserSchema = Schema({
+  rol: { type: String, enum: ['Basico', 'Admin'], default: "Basico"},
   username: String,
   email:    String,
   password: String,
