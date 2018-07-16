@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<img src="/images/movieshead.jpg" class="img-fluid" alt="Responsive image">
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h2 class="display-4">Awesome Mongoose Movies...</h2>
+    <p class="lead">You wanna know a little bit more, don´t you?</p>
+  </div>
+</div>
+
+<a href="/movies/new" class="btn btn-warning">"Wanna" add one more movie?</a>
+
+{{#each dpt}}
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    {{Denom}}
+    <a href="/movies/{{_id}}" span class="badge badge-primary badge-pill">More details</a>
+  </li>
+</ul>
+{{/each}}
