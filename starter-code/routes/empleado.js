@@ -29,12 +29,14 @@ router.get("/users/edit/:id", (req, res) => {
 router.post("/users/edit/:id", upload.single('profilePic'), (req, res) => {
   const { username, name, surname, email, password, dpto, workCenter, dpt } = req.body;
   const hashPass = bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-  if(!req.file) {
-    req.file = {
-      filename:"person-icon.png",
-      originalname:"person-icon"
+  Users.findById( req.params.id ).then( user => {
+    if(!req.file) {
+      req.file = {
+        filename: user.profilePic.path,
+        originalname: user.profilePic.name
+      }
     }
-  }
+  })
   console.log(req.file);
   Users.findByIdAndUpdate(req.params.id, { 
     username, 

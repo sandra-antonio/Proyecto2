@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const wCenterSchema = new Schema({
   name: { type: String, enum: ["Centro Madrid", "Centro Barcelona", "Centro Valencia", "Centro Sevilla", "Centro Bilbao"]},
   description: String,
-  location: { type: { type: String }, coordinates: [Number] }
+  location:  [Number] 
 });
 
 //wCenterSchema.index({
