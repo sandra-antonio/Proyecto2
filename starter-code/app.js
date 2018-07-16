@@ -73,12 +73,23 @@ passport.use('local-signup', new LocalStrategy(
                 // Destructure the body
                 const {
                   username,
+                  name,
+                  surname,
+                  dpto,
+                  workCenter,
+                  dpt,
                   email,
-                  password
+                  password,
+
                 } = req.body;
                 const hashPass = bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
                 const newUser = new User({
                   username,
+                  name,
+                  surname,
+                  dpto,
+                  workCenter,
+                  dpt,
                   email,
                   password: hashPass,
                   profilePic: {
@@ -110,10 +121,12 @@ const index = require('./routes/index');
 const authRoutes = require('./routes/authentication');
 const postRoutes = require('./routes/post')
 const dptRoutes = require('./routes/dpt')
+const empleadoRoutes = require('./routes/empleado')
 app.use('/', index);
 app.use('/', authRoutes);
 app.use('/', postRoutes);
 app.use('/', dptRoutes);
+app.use('/', empleadoRoutes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

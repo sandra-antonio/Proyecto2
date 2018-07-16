@@ -1,0 +1,81 @@
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+  crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+  crossorigin="anonymous">
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Añadir comentarioContraer
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h2 class="display-4">Editing an existing movie...?</h2>
+    <p class="lead">Of course, you can edit an existing movie as many time as you need!</p>
+  </div>
+</div>
+<form action="/users/edit/{{user.id}}" method="POST" enctype="multipart/form-data">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputName">Name</label>
+      <input type="text" class="form-control" id="inputName" name="name" value={{user.name}}>
+    </div>
+    <div class="form-group  col-md-6">
+      <label for="surname">Surname</label>
+      <input type="text" class="form-control" id="surname" name="surname" value="{{user.surname}}">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputUsername">Username</label>
+    <input type="text" class="form-control" id="inputUserame" name="username" value="{{user.username}}">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" class="form-control" id="email" name="email" value="{{user.email}}">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" name="password">
+  </div>
+  <div class="form-group">
+    <label for="dpto">Area</label>
+    <select class="form-control form-control-lg" name="dpto" id="dpto" value="{{user.dpto}}">
+      <option>RRHH</option>
+      <option>Hacienda</option>
+      <option>Sanidad</option>
+      <option>Economía y Empleo</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="workCenter">Work Center</label>
+    <select class="form-control form-control-lg" name="workCenter" id="workCenter" value="{{user.workCenter}}">
+      <option>Centro Madrid</option>
+      <option>Centro Barcelona</option>
+      <option>Centro Valencia</option>
+      <option>Centro Sevilla</option>
+      <option>Centro Bilbao</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="dpt">Position</label>
+    <select class="form-control form-control-lg" name="dpt" id="dpt" value="{{user.dpt}}">
+      <option>Tecnico PRL</option>
+      <option>Aux. Administrativo</option>
+      <option>Interventor General</option>
+      <option>Tesorero</option>
+      <option>Coordinador Area Sanidad</option>
+      <option>Aux. de Laboratorio</option>
+      <option>Orientador Laboral</option>
+      <option>Tec. Programas Empleo</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="profilePic">Password</label>
+    <input type="file" class="form-control" id="profilePic" name="profilePic">
+  </div>
+  <button type="submit" class="btn btn-success">Update user!</button>
+</form>
+<a href="/users" class="btn btn-warning">Back to Users list</a>
