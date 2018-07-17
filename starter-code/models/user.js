@@ -5,7 +5,7 @@ const Schema   = mongoose.Schema;
 const UserSchema = Schema({
   profilePic: {
     pname: String,
-    path: String,
+    path: {type: String, default: "uploads/person-icon.png"},
     originalName: String
   },
   username: String,
