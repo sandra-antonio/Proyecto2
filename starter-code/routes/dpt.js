@@ -20,6 +20,31 @@ router.get('/dpt', (req, res) => {
     });
 });
 
+//Add a DPT
+router.get("/dpt/new", (req, res, next) => {
+  res.render('dpts/new');
+});
+
+/* Adding new DPT*/
+router.post("/dpt/new", (req, res, next) => {
+  const { Denom, Area, Colectivo, Mision, Funciones, TareasTipo1, TareasDedicacion1, TareasResultado1, TareasTipo2, TareasDedicacion2, TareasResultado2, TareasTipo3, TareasDedicacion3, TareasResultado3, TareasTipo4, TareasDedicacion4, TareasResultado4, TareasTipo5, TareasDedicacion5, TareasResultado5, FormacionTitulo, Idiomas, FormacionExperiencia, FormacionHabilidades, ResponsabilidadNivel, Colaboradores, SupervisionNivel, CondicionesTurnicidad, CondicionesColaboradores, CondicionesNocturnidad, CondicionesPeligro} = req.body;
+  const Tareas = [{tipo: TareasTipo1, resultado: TareasResultado1, dedicacion: TareasDedicacion1}, {tipo: TareasTipo2, resultado: TareasResultado2, dedicacion: TareasDedicacion2}, {tipo: TareasTipo3, resultado: TareasResultado3, dedicacion: TareasDedicacion3}, {tipo: TareasTipo4, resultado: TareasResultado4, dedicacion: TareasDedicacion4}, {tipo: TareasTipo5, resultado: TareasResultado5, dedicacion: TareasDedicacion5}]
+  const Formacion = {titulo: FormacionTitulo, idiomas: Idiomas, experiencia: FormacionExperiencia, habilidades: FormacionHabilidades}
+  const Responsabilidad = {NivRes: ResponsabilidadNivel, Colaboradores: Colaboradores, NivSuperv: SupervisionNivel}
+  const Condiciones = {turnicidad: CondicionesTurnicidad, Colaboradores: CondicionesColaboradores, nocturnidad: CondicionesNocturnidad, peligro: CondicionesPeligro}
+  const newDpt = new dpt({ Denom, Area, Colectivo, Mision, Funciones, ResAut:Responsabilidad, Tareas, Formacion, Condiciones});
+  newDpt
+    .save()
+    .then(dpt => {
+      console.log("New dpt created");
+      res.redirect("/dpt");
+    })
+    .catch(error => {
+      console.log(error)
+      res.redirect("/dpt/new");
+    });
+});
+
 //Get one DPT
 router.get("/dpt/:id", (req, res, next) => {
   dpt.findById(req.params.id).then(dpt => {
@@ -37,74 +62,13 @@ router.get("/dpt/edit/:id", (req, res) => {
 
 /* Updating DPT in DB */
 router.post("/dpt/edit/:id", (req, res) => {
-  const { Denom, Area, Colectivo, Mision } = req.body;
-  dpt.findByIdAndUpdate(req.params.id, { Denom, Area, Colectivo, Mision }).then(dpt => {
+  const { Denom, Area, Colectivo, Mision, Funciones, TareasTipo1, TareasDedicacion1, TareasResultado1, TareasTipo2, TareasDedicacion2, TareasResultado2, TareasTipo3, TareasDedicacion3, TareasResultado3, TareasTipo4, TareasDedicacion4, TareasResultado4, TareasTipo5, TareasDedicacion5, TareasResultado5, FormacionTitulo, Idiomas, FormacionExperiencia, FormacionHabilidades, ResponsabilidadNivel, Colaboradores, SupervisionNivel, CondicionesTurnicidad, CondicionesColaboradores, CondicionesNocturnidad, CondicionesPeligro} = req.body;
+  dpt.findByIdAndUpdate(req.params.id, { Denom, Area, Colectivo, Mision, Funciones, TareasTipo1, TareasDedicacion1, TareasResultado1, TareasTipo2, TareasDedicacion2, TareasResultado2, TareasTipo3, TareasDedicacion3, TareasResultado3, TareasTipo4, TareasDedicacion4, TareasResultado4, TareasTipo5, TareasDedicacion5, TareasResultado5, FormacionTitulo, Idiomas, FormacionExperiencia, FormacionHabilidades, ResponsabilidadNivel, Colaboradores, SupervisionNivel, CondicionesTurnicidad, CondicionesColaboradores, CondicionesNocturnidad, CondicionesPeligro }).then(dpt => {
     res.redirect('/dpt');
   });
 });
 
-//Add a DPT
 
-router.get("/dpt/new", (req, res, next) => {
-  res.render('dpts/new');
-});
-
-/* Adding new movie */
-router.post("/dpt/new", (req, res, next) => {
-  const { title, genre, plot } = req.body;
-  const newDpt = new dpt({ title, genre, plot });
-  newDpt
-    .save()
-    .then(dpt => {
-      console.log("New movie sucessfully created!");
-      res.redirect("/dpts/catalog");
-    })
-    .catch(error => {
-      res.redirect("/dpts/new");
-    });
-});
-
-// router.get('/post/new', ensureLoggedIn(), (req, res, next) => {
-//   res.render('post/new');
-// })
-
-// router.post('/post/new', ensureLoggedIn(), upload.single('image'), (req, res, next) => {
-//   const newPost = new Posts({
-//     content: req.body.content,
-//     creatorId: req.user._id,
-//     picPath: `uploads/${req.file.filename}`,
-//     picName: req.file.originalname
-//   });
-
-//   newPost.save()
-//     .then( () =>{
-//       console.log("Post inserted succesfully");
-//       res.redirect('/post');
-//     })
-// })
-
-// router.get('/post/comment/:id', ensureLoggedIn(), (req, res, next) => {
-//   Posts.findById(req.params.id).then(post => {
-//   res.render('post/com', {post});
-  
-// })
-
-//   router.post('/post/comment/:id', ensureLoggedIn(), upload.single('image'), (req, res, next) => {
-//   Posts.findByIdAndUpdate(req.params.id)
-//   .then( post => {
-//     post.comments.push({
-//       comcontent:req.body.content,
-//       authorId: req.user._id,
-//       comimagePath: `uploads/${req.file.filename}`,
-//       comimageName: req.file.originalname
-//     })
-//     console.log(post)
-//     console.log("Post commented succesfully");
-//     res.redirect('/post');
-//   }) 
-//   .catch(error => console.log(error));
-//   });
-// });
 
 module.exports = router;
 
