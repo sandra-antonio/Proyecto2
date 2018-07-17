@@ -51,25 +51,20 @@
   </div>
   <div class="form-group">
     <label for="workCenter">Work Center</label>
-    <select class="form-control form-control-lg" name="workCenter" id="workCenter" value="{{user.workCenter}}">
-      <option>Centro Madrid</option>
-      <option>Centro Barcelona</option>
-      <option>Centro Valencia</option>
-      <option>Centro Sevilla</option>
-      <option>Centro Bilbao</option>
+    <select class="form-control form-control-lg" name="workCenter" id="workCenter">
+      {{#each centers}}
+      <option>{{name}}</option>
+      {{/each}}
+      <option selected>{{user.workCenter.name}}</option>
     </select>
   </div>
   <div class="form-group">
     <label for="dpt">Position</label>
-    <select class="form-control form-control-lg" name="dpt" id="dpt" value="{{user.dpt}}">
-      <option>Tecnico PRL</option>
-      <option>Aux. Administrativo</option>
-      <option>Interventor General</option>
-      <option>Tesorero</option>
-      <option>Coordinador Area Sanidad</option>
-      <option>Aux. de Laboratorio</option>
-      <option>Orientador Laboral</option>
-      <option>Tec. Programas Empleo</option>
+    <select class="form-control form-control-lg" name="dpt" id="dpt">
+      {{#each dpts}}
+      <option>{{Denom}}</option>
+      {{/each}}
+      <option selected>{{user.dpt.Denom}}</option>
     </select>
   </div>
   <div class="form-group">

@@ -4,6 +4,8 @@ const router = express.Router();
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 const mongoose = require('mongoose');
 const Users = require('../models/user');
+const Center = require('../models/workCenter');
+const Dpt = require('../models/dpt');
 const multer = require('multer');
 const upload = multer({dest: './public/uploads'});
 const hbs = require('hbs');
@@ -23,8 +25,25 @@ router.get('/users', (req, res) => {
 });
 
 router.get("/users/edit/:id", (req, res) => {
-  Users.findById(req.params.id).then(user => {
-    res.render("users/editUser", { user });
+  Users.findById(req.params.id)
+  .populate('workCenter')
+  .populate('dpt')
+  .then(user => {
+    Center.find()
+    .then(centers => {
+      Dpt.find()
+        .then(dpts => {
+          centers = centers.filter( (el) => el.name !== user.workCenter.name)
+          dpts = dpts.filter( (el) => el.Denom !== user.dpt.Denom)
+          res.render("users/editUser", { user, centers, dpts });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    })
+    .catch(err => {
+      console.log(err);
+    });
   });
 });
 
