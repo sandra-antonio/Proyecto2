@@ -11,7 +11,10 @@ const bcrypt = require('bcrypt');
 
 router.get('/users', (req, res) => {
   Users.find()
+  .populate("workCenter")
+  .populate("dpt")
     .then( (users) => {
+      console.log(users)
       res.render('users/usersList', {users});
     })
     .catch( (err) => {

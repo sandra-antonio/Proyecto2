@@ -122,11 +122,13 @@ const authRoutes = require('./routes/authentication');
 const postRoutes = require('./routes/post')
 const dptRoutes = require('./routes/dpt')
 const empleadoRoutes = require('./routes/empleado')
+const centerRoutes = require('./routes/center')
 app.use('/', index);
 app.use('/', authRoutes);
 app.use('/', postRoutes);
 app.use('/', dptRoutes);
 app.use('/', empleadoRoutes);
+app.use('/', centerRoutes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

@@ -11,30 +11,30 @@ WorkCenter.collection.drop();
 WorkCenter.create([
   {
     name: "Centro Madrid",
-    description: "Centro de trabajo en Madrid. Dedicado a ...",
-    location: [40.6056677, -3.7218051]
+    description: "Centro de trabajo en Madrid.",
+    coordinates: [40.4126135,-3.7070219]
   },
   {
     name: "Centro Barcelona",
-    description: "Centro de trabajo en Barcelona. Dedicado a ...",
-    location: [41.3825153, 2.1750194]
+    description: "Centro de trabajo en Barcelona.",
+    coordinates: [41.3895721,2.1875499]
   },
   {
     name: "Centro Valencia",
-    description: "Centro de trabajo en Valencia. Dedicado a ...",
-    location: [9.4697992, -0.3791969]
+    description: "Centro de trabajo en Valencia.",
+    coordinates: [39.480775, -0.323330]
   },
   {
     name: "Centro Sevilla",
-    description: "Centro de trabajo en Sevilla. Dedicado a ...",
-    location: [37.3843612, -6.0161532]
+    description: "Centro de trabajo en Sevilla.",
+    coordinates: [37.3861826,-5.9948024]
   },
   {
     name: "Centro Bilbao",
-    description: "Centro de trabajo en Bilbao. Dedicado a ...",
-    location: [43.2641428, -2.925712]
+    description: "Centro de trabajo en Bilbao.",
+    coordinates: [43.2627089,-2.9417931]
   }
 ]).then(() => {
-  console.log("Users created");
+  console.log("Centers created");
   mongoose.disconnect();
 });

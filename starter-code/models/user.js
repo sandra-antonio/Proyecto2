@@ -15,11 +15,8 @@ const UserSchema = Schema({
   email:    String,
   password: String,
   dpto: {type : String, enum: ["RRHH","Hacienda", "Sanidad", "Economía y Empleo", "Admin"]},
-  workCenter: { type: String, enum: ["Centro Madrid", "Centro Barcelona", "Centro Valencia", "Centro Sevilla", "Centro Bilbao"]},
-  dpt : { 
-    type : String, 
-    enum: ["Admin", "Tecnico PRL", "Aux. Administrativo", "Interventor General", "Tesorero", "Coordinador Area Sanidad", "Aux. de Laboratorio", "Orientador Laboral", "Tec. Programas Empleo"]
-  }
+  workCenter: {type:Schema.Types.ObjectId , ref:"workCenter"},
+  dpt : {type:Schema.Types.ObjectId , ref:"Dpt"},
 });
 
 const User = mongoose.model('User', UserSchema);
