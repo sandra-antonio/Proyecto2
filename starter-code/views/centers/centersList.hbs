@@ -14,27 +14,21 @@
 
 <a href="/movies/new" class="btn btn-warning">"Wanna" add one more movie?</a>
 
-
+<a href="/centers/create" span class="badge badge-primary badge-pill">Create</a>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">Photo</th>
       <th scope="col">Name</th>
-      <th scope="col">Surname</th>
-      <th scope="col">Area</th>
-      <th scope="col">Position</th>
+      <th scope="col">Description</th>
     </tr>
   </thead>
   <tbody>
-    {{#each users}}
+    {{#each centers}}
     <tr>
-      <td><img src="{{profilePic.path}}" alt="Profile picture" width="25px"></td>
       <td>{{name}}</td>
-      <td>{{surname}}</td>
-      <td>{{dpto}}</td>
-      <td>{{dpt}}</td>
-      <td><a href="/users/edit/{{_id}}" span class="badge badge-primary badge-pill">Edit</a></td>
-      <td><a href="/users/delete/{{_id}}" span class="badge badge-primary badge-pill">Delete</a></td>
+      <td>{{description}}</td>
+      <td><a href="/centers/edit/{{_id}}" span class="badge badge-primary badge-pill">Edit</a></td>
+      <td><a href="/centers/delete/{{_id}}" span class="badge badge-primary badge-pill">Delete</a></td>
     </tr>
     {{/each}}
  

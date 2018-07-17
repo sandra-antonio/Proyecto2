@@ -1,0 +1,37 @@
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+  crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+  crossorigin="anonymous">
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Añadir comentarioContraer
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h2 class="display-4">movie...?</h2>
+    <p class="lead">Of course, you can create a movie as many time as you need!</p>
+  </div>
+</div>
+<form action="/centers/create" method="POST">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputName">Name</label>
+      <input type="text" class="form-control" id="inputName" name="name">
+    </div>
+    <div class="form-group  col-md-6">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" name="description">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputUsername">Coordinates</label>
+    <input type="text" class="form-control" id="inputUserame" name="lat">
+    <input type="text" class="form-control" id="inputUserame" name="lng">
+  </div>
+  <button type="submit" class="btn btn-success">Create center!</button>
+</form>
+<a href="/centers" class="btn btn-warning">Back to Centers list</a>
