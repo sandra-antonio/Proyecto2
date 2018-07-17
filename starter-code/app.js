@@ -110,9 +110,6 @@ passport.use(
                   if (req.file){
                     create.path = `uploads/${req.file.filename}`;
                     create.originalName = req.file.originalname;
-                  } else {
-                    create.path = `uploads/person-icon.png`;
-                    create.originalName = "person-icon";
                   }
                   const hashPass = bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
                   create.password = hashPass;
