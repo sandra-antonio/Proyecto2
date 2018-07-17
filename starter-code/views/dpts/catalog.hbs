@@ -1,18 +1,19 @@
+<img src="/images/header.jpg" class="img-fluid" alt="Responsive image">
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<img src="/images/movieshead.jpg" class="img-fluid" alt="Responsive image">
 
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h2 class="display-4">Awesome Mongoose Movies...</h2>
-    <p class="lead">You wanna know a little bit more, don´t you?</p>
+    <h2 class="display-4">Catálogo de Puestos</h2>
+    <p class="lead">Relación de puestos de trabajo definidos en la organización:</p>
   </div>
 </div>
 
-<a href="/movies/new" class="btn btn-warning">"Wanna" add one more movie?</a>
+<a href="/dpt/new" class="btn btn-warning">Añadir nueva DPT</a>
 
 
 <table class="table table-striped">
@@ -29,7 +30,7 @@
       <td>{{Denom}}</td>
       <td>{{Area}}</td>
       <td>{{Colectivo}}</td>
-       <td><a href="/dpt/{{_id}}" span class="badge badge-primary badge-pill">More details</a></td>
+       <td><a href="/dpt/{{_id}}" span class="badge badge-primary badge-pill">+</a></td>
     </tr>
     {{/each}}
  

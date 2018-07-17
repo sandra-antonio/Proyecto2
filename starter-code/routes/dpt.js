@@ -42,6 +42,28 @@ router.post("/dpt/edit/:id", (req, res) => {
     res.redirect('/dpt');
   });
 });
+
+//Add a DPT
+
+router.get("/dpt/new", (req, res, next) => {
+  res.render('dpts/new');
+});
+
+/* Adding new movie */
+router.post("/dpt/new", (req, res, next) => {
+  const { title, genre, plot } = req.body;
+  const newDpt = new dpt({ title, genre, plot });
+  newDpt
+    .save()
+    .then(dpt => {
+      console.log("New movie sucessfully created!");
+      res.redirect("/dpts/catalog");
+    })
+    .catch(error => {
+      res.redirect("/dpts/new");
+    });
+});
+
 // router.get('/post/new', ensureLoggedIn(), (req, res, next) => {
 //   res.render('post/new');
 // })
