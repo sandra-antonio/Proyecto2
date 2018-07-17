@@ -15,38 +15,19 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
 
-    <h2 class="display-4">Good Choice!</h2>
-    <p class="lead">Let tell you more about
+    <h2 class="display-4">De acuerdo!</h2>
+    <p class="lead">Vamos a conocer un poco más detalle la posición:
       <h4> {{dpt.Denom}}</h4>
   </div>
 </div>
 
 </div>
 
-<a href="/dpt/edit/{{dpt.id}}" class="btn btn-info">Edit DPT</a>
-<a href="/movies/delete/{{movie.id}}" span class="btn btn-danger">Delete DPT</a>
+<a href="/dpt/edit/{{dpt.id}}" class="btn btn-info">Editar DPT</a>
+<a href="/movies/delete/{{movie.id}}" span class="btn btn-danger">Eliminar DPT</a>
 
 
-    <div class="card">
-      <div class="card-header" id="headingTwo">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-            aria-controls="collapseTwo">
-            <h3>Misión</h3>
-          </button>
-        </h5>
-      </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-        <div class="card-body">
-          <div class="container">
-            <div class="row">
 
-              <h4>El principal propósito de este puesto en la organización es:</h4>
-              <p>{{dpt.Mision}}</p>
-            </div>
-</div>
-</div>
-</div>
 <div class="accordion" id="accordionExample">
   <div class="card">
     <div class="card-header" id="headingOne">
@@ -72,53 +53,173 @@
               <p>{{dpt.Colectivo}}</p>
             </div>
           </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        <h3>Misión</h3>
-        </button>
-      </h5>
-    </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-      <div class="card-body">
-        <div class="container">
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+            aria-controls="collapseTwo">
+            <h3>Misión</h3>
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+          <div class="container">
             <div class="row">
-              <h4>El principal propósito de este puesto en la organización es:</h4><p>{{dpt.Mision}}</p>
+              <h4>El principal propósito de este puesto en la organización es:</h4>
+              <p>{{dpt.Mision}}</p>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+              aria-controls="collapseThree">
+              <h3>Funciones:</h3>
+              <p></p>
+
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+            {{dpt.Funciones}}
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingThree">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Collapsible Group Item #3
-        </button>
-      </h5>
-    </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+    <div class="card">
+      <div class="card-header" id="headingFour">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+            aria-controls="collapseFour">
+            <h3>Tareas</h3>
+          </button>
+        </h5>
       </div>
-    </div>
-  </div>
-</div>
-<div class="card">
-    <div class="card-header" id="headingFour">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-          Collapsible Group Item #3
-        </button>
-      </h5>
-    </div>
-    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                {{#each dpt.Tareas}}
+                <h4>Tipo:</h4>
+                <p>{{tipo}}</p>
+                <h4>Resultado:</h4>
+                <p>{{resultado}}</p>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <h4>Dedicación:</h4>
+                  <p>{{dedicacion}}</p>
+                  {{/each}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
+      <div class="card">
+        <div class="card-header" id="headingFive">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+              aria-controls="collapseFive">
+              <h3>Formación:</h3>
+              <p></p>
+            </button>
+          </h5>
+        </div>
+        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+          <div class="card-body">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  {{#each dpt.Formacion}}
+                  <h4>Titulación:</h4>
+                  <p>{{titulo}}</p>
+                  <h4>Idiomas:</h4>
+                  <p>{{idiomas}}</p>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <h4>Experiencia:</h4>
+                    <p>{{experiencia}}</p>
+                    <h4>Habilidades:</h4>
+                    <p>{{habilidades}}</p>
+                    {{/each}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingSix">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+                aria-controls="collapseSix">
+                <h3>Responsabilidad y Autonomía:</h3>
+                <p></p>
+              </button>
+            </h5>
+          </div>
+          <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    {{#each dpt.ResAut}}
+                    <h4>Nivel de Responsabilidad:</h4>
+                    <p>{{NivRes}}</p>
+                    <h4>Colaboradores:</h4>
+                    <p>{{Colaboradores}}</p>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <h4>Nivel de Supervisión:</h4>
+                      <p>{{NivSuperv}}</p>
+                      {{/each}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+        <div class="card">
+          <div class="card-header" id="headingSeven">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false"
+                aria-controls="collapseSeven">
+                <h3>Condiciones:</h3>
+                <p></p>
+              </button>
+            </h5>
+          </div>
+          <div id="collapseSeven" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    {{#each dpt.Condiciones}}
+                    <h4>Turnicidad:</h4>
+                    <p>{{turnicidad}}</p>
+                    <h4>Colaboradores:</h4>
+                    <p>{{Colaboradores}}</p>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <h4>Nocturnidad:</h4>
+                      <p>{{nocturnidad}}</p>
+                      <h4>Peligro:</h4>
+                      <p>{{peligro}}</p>
+                      {{/each}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
