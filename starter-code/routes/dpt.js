@@ -12,7 +12,7 @@ const hbs = require('hbs');
 //Get all DPT´s
 router.get('/dpt', (req, res) => {
   dpt.find()
-    .then( (dpt) => {
+    .then( (dpt) => {      
       res.render('dpts/catalog', {dpt});
     })
     .catch( (err) => {
@@ -63,12 +63,21 @@ router.get("/dpt/edit/:id", (req, res) => {
 /* Updating DPT in DB */
 router.post("/dpt/edit/:id", (req, res) => {
   const { Denom, Area, Colectivo, Mision, Funciones, TareasTipo1, TareasDedicacion1, TareasResultado1, TareasTipo2, TareasDedicacion2, TareasResultado2, TareasTipo3, TareasDedicacion3, TareasResultado3, TareasTipo4, TareasDedicacion4, TareasResultado4, TareasTipo5, TareasDedicacion5, TareasResultado5, FormacionTitulo, Idiomas, FormacionExperiencia, FormacionHabilidades, ResponsabilidadNivel, Colaboradores, SupervisionNivel, CondicionesTurnicidad, CondicionesColaboradores, CondicionesNocturnidad, CondicionesPeligro} = req.body;
-  dpt.findByIdAndUpdate(req.params.id, { Denom, Area, Colectivo, Mision, Funciones, TareasTipo1, TareasDedicacion1, TareasResultado1, TareasTipo2, TareasDedicacion2, TareasResultado2, TareasTipo3, TareasDedicacion3, TareasResultado3, TareasTipo4, TareasDedicacion4, TareasResultado4, TareasTipo5, TareasDedicacion5, TareasResultado5, FormacionTitulo, Idiomas, FormacionExperiencia, FormacionHabilidades, ResponsabilidadNivel, Colaboradores, SupervisionNivel, CondicionesTurnicidad, CondicionesColaboradores, CondicionesNocturnidad, CondicionesPeligro }).then(dpt => {
+  const Tareas = [{tipo: TareasTipo1, resultado: TareasResultado1, dedicacion: TareasDedicacion1}, {tipo: TareasTipo2, resultado: TareasResultado2, dedicacion: TareasDedicacion2}, {tipo: TareasTipo3, resultado: TareasResultado3, dedicacion: TareasDedicacion3}, {tipo: TareasTipo4, resultado: TareasResultado4, dedicacion: TareasDedicacion4}, {tipo: TareasTipo5, resultado: TareasResultado5, dedicacion: TareasDedicacion5}]
+  const Formacion = {titulo: FormacionTitulo, idiomas: Idiomas, experiencia: FormacionExperiencia, habilidades: FormacionHabilidades}
+  const Responsabilidad = {NivRes: ResponsabilidadNivel, Colaboradores: Colaboradores, NivSuperv: SupervisionNivel}
+  const Condiciones = {turnicidad: CondicionesTurnicidad, Colaboradores: CondicionesColaboradores, nocturnidad: CondicionesNocturnidad, peligro: CondicionesPeligro}
+  dpt.findByIdAndUpdate(req.params.id, { Denom, Area, Colectivo, Mision, Funciones, ResAut:Responsabilidad, Tareas, Formacion, Condiciones }).then(dpt => {
     res.redirect('/dpt');
   });
 });
 
-
+//Deleting a DPT
+router.get("/dpt/delete/:id", (req, res, next) => {
+  dpt.findByIdAndRemove(req.params.id, () =>
+    res.redirect("/dpt")
+  );
+});
 
 module.exports = router;
 
