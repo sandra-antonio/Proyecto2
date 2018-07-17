@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<script>
+window.centers = {{{centers}}};
+</script>
+<div id="map" style="height:500px"></div>
+
+
+
+<a href="places/new" class="btn btn-info">Add a New Place</a>
+
+
+{{!-- router.get('/', (req, res, next) => {
+  Restaurant.find().then( restaurants => {
+    console.log(restaurants);
+    res.render('index',{restaurants:JSON.stringify(restaurants)});
+  })
+}) --}}

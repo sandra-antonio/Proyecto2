@@ -1,5 +1,3 @@
-<img src="/images/cineheader.jpg" class="img-fluid" alt="Responsive image">
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
   crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -14,8 +12,8 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h2 class="display-4">Editing an existing movie...?</h2>
-    <p class="lead">Of course, you can edit an existing movie as many time as you need!</p>
+    <h2 class="display-4">Editar DPT</h2>
+    <p class="lead">Realizar modificaciones a la DPT de {{dpt.Denom}}:</p>
   </div>
 </div>
 
@@ -42,14 +40,22 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Area</label>
-                <input type="text" class="form-control" id="inputOccupation" name="Area" value={{dpt.Area}}>
+                <label for="exampleFormControlSelect1">Area</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="Area" value="{{dpt.Area}}">
+                  <option>RRHH</option>
+                  <option>Hacienda</option>
+                  <option>Sanidad</option>
+                  <option>Economía y Empleo</option>
+                </select>
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputName">Colectivo</label>
-                <input type="text" class="form-control" id="inputName" name="Colectivo" value="{{dpt.Colectivo}}">
+                <select class="form-control" id="exampleFormControlSelect1" name="Colectivo" value="{{dpt.Colectivo}}">
+                  <option>Laboral</option>
+                  <option>Personal Funcionario</option>
+                </select>
               </div>
             </div>
           </div>
@@ -104,24 +110,85 @@
       </h5>
     </div>
     <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-      <div class="card-body">
+      <form class="card-body">
         <div class="container">
-          {{#each dpt.Tareas}}
-          <div class="form-group col-md-6">
-            <label for="inputName">Tareas - Tipo</label>
-            <input type="text" class="form-control" id="inputName" name="Tareas.tipo" value="{{tipo}}">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputPassword4">Tareas - Dedicación</label>
-            <input type="text" class="form-control" id="inputOccupation" name="Tareas.resultado" value={{dedicacion}}>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <label for="inputName">Tipo</label>
+                <input type="text" class="form-control" id="inputName" name="TareasTipo1" value="{{dpt.Tareas.[0].tipo}}">
+              </div>
+              <div class="col-sm">
+                <label for="inputPassword4">Dedicación</label>
+                <input type="text" class="form-control" id="inputOccupation" name="TareasDedicacion1" value="{{dpt.Tareas.[0].dedicacion}}">
+              </div>
+              <div class="col-sm">
+                <label for="inputName">Resultado</label>
+                <input type="text" class="form-control" id="inputName" name="TareasResultado1" value="{{dpt.Tareas.[0].resultado}}">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                <label for="inputName">Tipo</label>
+                <input type="text" class="form-control" id="inputName" name="TareasTipo2" value="{{dpt.Tareas.[1].tipo}}">
+              </div>
+              <div class="col-sm">
+                <label for="inputPassword4">Dedicación</label>
+                <input type="text" class="form-control" id="inputOccupation" name="TareasDedicacion2" value="{{dpt.Tareas.[1].dedicacion}}">
+              </div>
+              <div class="col-sm">
+                <label for="inputName">Resultado</label>
+                <input type="text" class="form-control" id="inputName" name="TareasResultado2" value="{{dpt.Tareas.[1].resultado}}">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                <label for="inputName">Tipo</label>
+                <input type="text" class="form-control" id="inputName" name="TareasTipo3" value="{{dpt.Tareas.[2].tipo}}">
+              </div>
+              <div class="col-sm">
+                <label for="inputPassword4">Dedicación</label>
+                <input type="text" class="form-control" id="inputOccupation" name="TareasDedicacion3" value="{{dpt.Tareas.[2].dedicacion}}">
+              </div>
+              <div class="col-sm">
+                <label for="inputName">Resultado</label>
+                <input type="text" class="form-control" id="inputName" name="TareasResultado3" value="{{dpt.Tareas.[2].resultado}}">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                <label for="inputName">Tipo</label>
+                <input type="text" class="form-control" id="inputName" name="TareasTipo4" value="{{dpt.Tareas.[3].tipo}}">
+              </div>
+              <div class="col-sm">
+                <label for="inputPassword4">Dedicación</label>
+                <input type="text" class="form-control" id="inputOccupation" name="TareasDedicacion4" value="{{dpt.Tareas.[3].dedicacion}}">
+              </div>
+              <div class="col-sm">
+                <label for="inputName">Resultado</label>
+                <input type="text" class="form-control" id="inputName" name="TareasResultado4" value="{{dpt.Tareas.[3].resultado}}">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                <label for="inputName">Tipo</label>
+                <input type="text" class="form-control" id="inputName" name="TareasTipo5" value="{{dpt.Tareas.[4].tipo}}">
+              </div>
+              <div class="col-sm">
+                <label for="inputPassword4">Dedicación</label>
+                <input type="text" class="form-control" id="inputOccupation" name="TareasDedicacion5" value="{{dpt.Tareas.[4].dedicacion}}">
+              </div>
+              <div class="col-sm">
+                <label for="inputName">Resultado</label>
+                <input type="text" class="form-control" id="inputName" name="TareasResultado5" value="{{dpt.Tareas.[4].resultado}}">
+              </div>
+            </div>
           </div>
         </div>
-        <div class="form-group"></div>
-        <label for="inputName">Tareas - Resultado</label>
-        <input type="text" class="form-control" id="inputName" name="Tareas.tipo" value="{{resultado}}">
-      </div>
     </div>
-    {{/each}}
+  </div>
+  </div>
+  </div>
   </div>
   </div>
   </div>
@@ -138,33 +205,36 @@
     <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
       <div class="card-body">
         <div class="container">
-          {{#each dpt.Formacion}}
+
           <div class="form-row">
 
             <div class="form-group col-md-6">
 
-              <label for="inputName">Formación - Título</label>
-              <input type="text" class="form-control" id="inputName" name="Formacion.titulo" value="{{titulo}}">
+              <label for="inputName">Título</label>
+              <input type="text" class="form-control" id="inputName" name="FormacionTitulo" value="{{dpt.Formacion.[0].titulo}}">
             </div>
             <div class="form-group col-md-6">
-              <label for="inputPassword4">Formación - Idiomas</label>
-              <input type="text" class="form-control" id="inputOccupation" name="Formacion.idiomas" value={{idiomas}}>
+              <label for="inputPassword4">Idiomas</label>
+              <input type="text" class="form-control" id="inputOccupation" name="Idiomas" value="{{dpt.Formacion.[0].idiomas}}">
             </div>
           </div>
 
           <div class="form-row">
 
             <div class="form-group col-md-6">
-
-              <label for="inputName">Formación - Experiencia</label>
-              <input type="text" class="form-control" id="inputName" name="Formacion.titulo" value="{{experiencia}}">
+              <label for="inputPassword4">Experiencia</label>
+              <select class="form-control" id="exampleFormControlSelect1" name="FormacionExperiencia" value="{{dpt.Formacion.[0].experiencia}}">
+                <option>Menos 1 año</option>
+                <option>3-5 años</option>
+                <option>Mas 5 años</option>
+              </select>
             </div>
             <div class="form-group col-md-6">
               <label for="inputPassword4">Formación - Habilidades</label>
-              <input type="text" class="form-control" id="inputOccupation" name="Formacion.idiomas" value={{habilidades}}>
+              <input type="text" class="form-control" id="inputOccupation" name="FormacionHabilidades" value="{{dpt.Formacion.[0].habilidades}}">
             </div>
           </div>
-          {{/each}}
+
         </div>
       </div>
     </div>
@@ -182,34 +252,42 @@
     <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
       <div class="card-body">
         <div class="container">
-          {{#each dpt.ResAut}}
+
           <div class="form-row">
 
             <div class="form-group col-md-6">
 
-              <label for="inputName">Nivel Responsabilidad</label>
-              <input type="text" class="form-control" id="inputName" name="Formacion.titulo" value="{{NivRes}}">
+              <label for="inputPassword4">Nivel de Responsabilidad</label>
+              <select class="form-control" id="exampleFormControlSelect1" name="ResponsabilidadNivel">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
             </div>
             <div class="form-group col-md-6">
               <label for="inputPassword4">¿Colaboradores?</label>
-              <input type="text" class="form-control" id="inputOccupation" name="Formacion.idiomas" value={{Colaboradores}}>
+              <select class="form-control" id="exampleFormControlSelect1" name="Colaboradores">
+                <option>Sí</option>
+                <option>No</option>
+              </select>
             </div>
-          </div>
-
-          <div class="form-row">
-
             <div class="form-group col-md-6">
-
-              <label for="inputName">Nivel Supervisión</label>
-              <input type="text" class="form-control" id="inputName" name="Formacion.titulo" value="{{NivSuperv}}">
+              <label for="inputPassword4">Nivel de Supervisión</label>
+              <select class="form-control" id="exampleFormControlSelect1" name="SupervisionNivel">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
             </div>
-          
           </div>
-          {{/each}}
         </div>
       </div>
     </div>
-    <div class="card">
+    <form class="card">
       <div class="card-header" id="headingSeven">
         <h5 class="mb-0">
           <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false"
@@ -222,38 +300,48 @@
       <div id="collapseSeven" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
         <div class="card-body">
           <div class="container">
-            {{#each dpt.Condiciones}}
-      <div class="form-row">
 
-        <div class="form-group col-md-6">
+            <div class="form-row">
 
-          <label for="inputName">Condiciones - ¿Turnicidad?</label>
-          <input type="text" class="form-control" id="inputName" name="Formacion.titulo" value="{{turnicidad}}">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Condiciones - ¿Colaboradores?</label>
-          <input type="text" class="form-control" id="inputOccupation" name="Formacion.idiomas" value={{Colaboradores}}>
-        </div>
-      </div>
+              <div class="form-group col-md-6">
 
-      <div class="form-row">
-
-        <div class="form-group col-md-6">
-
-          <label for="inputName">Condiciones - ¿Nocturnidad?</label>
-          <input type="text" class="form-control" id="inputName" name="Formacion.titulo" value="{{nocturnidad}}">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Condiciones - ¿Peligro?</label>
-          <input type="text" class="form-control" id="inputOccupation" name="Formacion.idiomas" value={{peligro}}>
-        </div>
-      </div>
-      {{/each}}
+                <label for="inputPassword4">¿Turnicidad?</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="CondicionesTurnicidad">
+                  <option>Sí</option>
+                  <option>No</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">¿Colaboradores?</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="CondicionesColaboradores">
+                  <option>Sí</option>
+                  <option>No</option>
+                </select>
+              </div>
             </div>
+
+            <div class="form-row">
+
+              <div class="form-group col-md-6">
+
+                <label for="inputPassword4">¿Nocturnidad?</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="CondicionesNocturnidad">
+                  <option>Sí</option>
+                  <option>No</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">¿Peligro?</label>
+
+                <select class="form-control" id="exampleFormControlSelect1" name="CondicionesPeligro">
+                  <option>Sí</option>
+                  <option>No</option>
+                </select>
+              </div>
+            </div>
+
           </div>
         </div>
-
-
-
-
-       
+      </div>
+      <button type="submit" class="btn btn-success">Actualizar DPT</button>
+    </form>
