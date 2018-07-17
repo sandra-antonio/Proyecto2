@@ -18,6 +18,19 @@ router.get('/centers', (req, res) => {
     });
 });
 
+router.get('/centers/location', (req, res, next) => {
+  Center.find()
+    .then( (centers) => {
+      res.render('centers/centersLocation', {centers:JSON.stringify(centers)});
+    })
+    .catch( (err) => {
+      console.log(err)
+    });
+});
+
+
+
+
 router.get("/centers/edit/:id", (req, res) => {
   Center.findById(req.params.id).then(center => {
     res.render("centers/editCenter", { center });

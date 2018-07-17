@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+  console.log(window.centers)
 
-  const ironhackBCN = {
-    lat: 41.3977381,
-    lng: 2.190471916
+  const MADRID = {
+    lat: 40.4126135,
+    lng: -3.7070219
   };
   const map = new google.maps.Map(
     document.getElementById('map'), {
-      zoom: 15,
-      center: ironhackBCN
+      zoom: 7,
+      center: MADRID,
     }
   );
 
