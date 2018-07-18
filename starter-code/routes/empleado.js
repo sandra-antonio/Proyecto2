@@ -23,6 +23,19 @@ router.get("/users", (req, res) => {
     });
 });
 
+router.get('/users/data', (req, res, next) => {
+  Users.find()
+  .populate("workCenter")
+    .populate("dpt")
+    .then(users => {
+      res.render("users/charts", { users });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
+
 router.get("/users/edit/:id", (req, res) => {
   Users.findById(req.params.id)
     .populate("workCenter")
@@ -46,7 +59,27 @@ router.get("/users/edit/:id", (req, res) => {
     });
 });
 
-/* Updating movie in DB */
+
+router.get("/users/profile/:id", (req, res) => {
+  Users.findById(req.params.id)
+  .populate("workCenter")
+  .populate("dpt")
+  .then(user => {
+    Users.find(
+     {$and: [{workCenter: user.workCenter._id},{_id: {$ne: user._id}}]}
+    ).then(centerusers => {
+      console.log(centerusers)
+      console.log(user.workCenter.coordinates)
+      res.render("users/userprofile", { user, centro: JSON.stringify(user.workCenter), centerusers });
+    })
+  })
+  .catch(err => {
+    console.log(err);
+  });
+});
+
+
+/* Updating user in DB */
 router.post("/users/edit/:id", upload.single("profilePic"), (req, res) => {
   const {
     username,
