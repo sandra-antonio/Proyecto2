@@ -67,7 +67,9 @@ router.get("/users/profile/:id", (req, res) => {
   .then(user => {
     Users.find(
      {$and: [{workCenter: user.workCenter._id},{_id: {$ne: user._id}}]}
-    ).then(centerusers => {
+    )
+    .populate("dpt")
+    .then(centerusers => {
       console.log(centerusers)
       console.log(user.workCenter.coordinates)
       res.render("users/userprofile", { user, centro: JSON.stringify(user.workCenter), centerusers });
