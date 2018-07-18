@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+  crossorigin="anonymous">
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<script>
+  window.centers = {{{ centers }}}
+//window.centers ;
+</script>
+<script src="/javascripts/script.js"></script>
+
+
+<div class="row">
+  <div class="col-8"> <canvas id="myChart"></canvas>
+
+
+
+  
+<script>
+  var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [{
+            label: "My First dataset",
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45],
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+</div>
+  <div class="col-4"><div id="map" style="height:500px" width="500px"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClr_fVK41OBJxuab_HEI3I30pcijqHB7E"></script>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <canvas id="myChart"></canvas>
+<script>
+  var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [{
+            label: "My First dataset",
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45],
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+
+    </div>
+    </div>
+    <div class="col">
+<div id="map" style="height:500px" width="500px"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClr_fVK41OBJxuab_HEI3I30pcijqHB7E"></script>
+<br>
+    </div>
+  </div>
+
+
+
+
+<div class="centrar">
+<a href="/centers/create" class="btn btn-info">Add a New Center</a>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each center}}
+    <tr>
+      <td>{{name}}</td>
+      <td>{{description}}</td>
+      <td>
+        <a href="/centers/viewcenter/{{_id}}" span class="badge badge-primary badge-pill">+</a>
+      </td>
+  
+    </tr>
+    {{/each}}
+  </tbody>
+</table
