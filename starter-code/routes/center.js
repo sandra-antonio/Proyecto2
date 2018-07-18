@@ -22,7 +22,7 @@ router.get('/centers', (req, res) => {
 router.get('/centers/location', (req, res, next) => {
   Center.find()
     .then( (centers) => {
-      res.render('centers/centersLocation', {centers:JSON.stringify(centers), center:centers});
+      res.render('centers/dashboard', {centers:JSON.stringify(centers), center:centers});
       console.log(centers)
     })
     .catch( (err) => {

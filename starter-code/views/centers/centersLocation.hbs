@@ -4,19 +4,17 @@
 //window.centers ;
 </script>
 <script src="/javascripts/script.js"></script>
-
 <div id="map" style="height:500px"></div>
-
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClr_fVK41OBJxuab_HEI3I30pcijqHB7E"></script>
 <br>
-
+<div class="centrar">
 <a href="/centers/create" class="btn btn-info">Add a New Center</a>
-
+</div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripción</th>
     </tr>
   </thead>
   <tbody>
@@ -25,16 +23,10 @@
       <td>{{name}}</td>
       <td>{{description}}</td>
       <td>
-        <a href="/centers/viewcenter/{{_id}}" span class="badge badge-primary badge-pill">More</a>
+        <a href="/centers/viewcenter/{{_id}}" span class="badge badge-primary badge-pill">+</a>
       </td>
-      <td>
-        <a href="/centers/viewcenter/{{_id}}" span class="badge badge-primary badge-pill">Edit</a>
-      </td>
-      <td>
-        <a href="/centers/edit/{{_id}}" span class="badge badge-primary badge-pill">Delete</a>
-      </td>
+  
     </tr>
     {{/each}}
-
   </tbody>
-</table>
+</table

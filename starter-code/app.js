@@ -1,3 +1,6 @@
+require('dotenv').config();
+
+
 const express = require("express");
 const path = require("path");
 const favicon = require("serve-favicon");
@@ -18,7 +21,8 @@ const upload = multer({ dest: "./public/uploads" });
 const Center = require("./models/workCenter");
 const Dpt = require("./models/dpt");
 
-mongoose.connect("mongodb://localhost:27017/proyecto2");
+
+mongoose.connect(process.env.DBURL);
 
 const app = express();
 

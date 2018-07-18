@@ -21,8 +21,6 @@
   <div class="container">
     <h2 class="display-4">Ficha de colaborador: </h2>
     <p class="lead">Conociendo un poco mas a {{user.name}} y sus compañeros...</p>
-      <img src="../../{{user.profilePic.path}}" alt="Profile picture" width="75px"></li>
-
   </div>
 
 </div>
@@ -36,10 +34,13 @@
 
         <li class="list-group-item">
           
-          <h4>Nombre:</h4>
-          <p>{{user.name}}</p>
+          
+                <img src="../../{{user.profilePic.path}}" alt="Profile picture" width="50px"></li>
+
         </li>
         <li class="list-group-item">
+          <h4>Nombre:</h4>
+          <p>{{user.name}}</p>
           <h4>Apellidos:</h4>
           <p>{{user.surname}}</p>
         </li>
@@ -59,7 +60,7 @@
       </ul>
     </div>
     <div class="col">
-      <div id="map" style="height:450px"></div>
+      <div id="map" style="height:500px"></div>
     </div>
   </div>
 
