@@ -7,31 +7,31 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
   crossorigin="anonymous">
 <link rel="stylesheet" href="/stylesheets/style.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Añadir comentarioContraer
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h2 class="display-4">movie...?</h2>
-    <p class="lead">Of course, you can create a movie as many time as you need!</p>
+    <h2 class="display-4">Create a new Center</h2>
   </div>
 </div>
 <form action="/centers/create" method="POST">
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="inputName">Name</label>
       <input type="text" class="form-control" id="inputName" name="name">
     </div>
-    <div class="form-group  col-md-6">
+    <div class="form-group  col-md-4">
       <label for="description">Description</label>
       <input type="text" class="form-control" id="description" name="description">
     </div>
+    <div class="form-group col-md-4">
+      <label for="inputUsername">Coordinates</label>
+      <input type="text" class="form-control" id="inputUserame" name="lat">
+      <input type="text" class="form-control" id="inputUserame" name="lng">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="inputUsername">Coordinates</label>
-    <input type="text" class="form-control" id="inputUserame" name="lat">
-    <input type="text" class="form-control" id="inputUserame" name="lng">
-  </div>
+  
   <button type="submit" class="btn btn-success">Create center!</button>
 </form>
 <a href="/centers" class="btn btn-warning">Back to Centers list</a>

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <img src="/images/header3.jpg" class="img-fluid" alt="Responsive image">
 
@@ -23,7 +23,8 @@
       <th scope="col">Surname</th>
       <th scope="col">Area</th>
       <th scope="col">Position</th>
-       <th scope="col">Centro</th>
+      <th scope="col">Centro</th>
+      <th scope="col">Admin</th>
     </tr>
   </thead>
   <tbody>
@@ -35,11 +36,8 @@
       <td>{{dpto}}</td>
       <td>{{dpt.Denom}}</td>
       <td>{{workCenter.name}}</td>
-
-      <td><a href="/users/edit/{{_id}}" span class="badge badge-primary badge-pill">Edit</a></td>
-      <td><a href="/users/delete/{{_id}}" span class="badge badge-primary badge-pill">Delete</a></td>
-                    <td><a href="/users/profile/{{_id}}" span class="badge badge-primary badge-pill">Ver ficha</a></td>
-
+      <td><input type="checkbox" ></td>
+      <td><a href="/users/profile/{{_id}}" span class="badge badge-primary badge-pill">Ver ficha</a></td>
     </tr>
     {{/each}}
  

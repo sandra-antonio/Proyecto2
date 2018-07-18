@@ -143,6 +143,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use((req, res, next) => {
+  res.locals.user = req.user;
+  res.locals.title = "NOmbre";
+  next();
+});
+
 const index = require("./routes/index");
 const authRoutes = require("./routes/authentication");
 const postRoutes = require("./routes/post");

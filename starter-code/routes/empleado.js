@@ -78,6 +78,13 @@ router.get("/users/profile/:id", (req, res) => {
   });
 });
 
+router.get("/users/dpt",(req,res) => {
+  console.log(req.user)
+  Dpt.findById(req.user.dpt)
+  .then(dpt => {
+    res.render("dpts/dpt", {dpt})
+  })
+})
 
 /* Updating user in DB */
 router.post("/users/edit/:id", upload.single("profilePic"), (req, res) => {
