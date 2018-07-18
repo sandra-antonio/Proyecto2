@@ -47,6 +47,7 @@ router.post("/centers/edit/:id", (req, res) => {
   }).catch(err => console.log(err))
 });
 
+//Esta es privada
 router.get("/centers/create", (req, res) => {
   Center.findById(req.params.id).then(center => {
     res.render("centers/createCenter", { center });
