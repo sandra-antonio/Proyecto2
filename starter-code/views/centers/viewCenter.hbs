@@ -15,6 +15,7 @@
       <div class="col">
         <h1>{{center.name}}</h1>
         <h3>{{center.description}}</h3>
+        
       </div>
       <div class="col">
         <div id="map" style="height:300px"></div>
@@ -22,11 +23,20 @@
     </div>
   </div>
 </div>
-
+<a href="/centers/edit/{{_id}}" class="btn btn-info">Editar este centro</a>
+<a href="/centers/delete/{{_id}}" span class="btn btn-danger">Eliminar este centro</a>
    <a href="/centers/viewcenter/{{_id}}" span class="badge badge-primary badge-pill">Edit</a>
       
         <a href="/centers/edit/{{_id}}" span class="badge badge-primary badge-pill">Delete</a>
+
+         <div class="centrar">
      
+         </div>
+    
+     
+<div class="centrar">
+  <h2>Colaboradores en este centro</h2>
+</div>
 
 
   <div class="container">
@@ -40,7 +50,7 @@
           <p class="card-text">{{workCenter.name}}
             <br>{{dpto}}
             <br>{{dpt.Denom}}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="/users/profile/{{_id}}" class="btn btn-primary">Ver ficha</a>
         </div>
       </div>
       {{/each}}

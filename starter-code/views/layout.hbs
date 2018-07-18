@@ -26,6 +26,25 @@
   </li>
 {{/unless}}
 {{#if user}}
+
+  {{#if user.isadmin}}
+  <li class="nav-item">
+    <a class="nav-link" href="/dpt">Catálogo Puestos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/centers/location">Centros de Trabajo</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mi usuario</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="/users/edit/{{user._id}}">Editar usuario</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="/users/delete/{{user._id}}">Eliminar usuario</a>
+    </div>
+  </li>
+  {{/if}}
+
+  {{#else}}
   <li class="nav-item">
     <a class="nav-link" href="/users/profile/{{user._id}}">Mi ficha</a>
   </li>
@@ -40,6 +59,7 @@
       <a class="dropdown-item" href="/users/delete/{{user._id}}">Eliminar usuario</a>
     </div>
   </li>
+{{/else}}
 {{/if}}
 </ul>
 

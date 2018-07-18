@@ -88,6 +88,36 @@ router.get("/users/dpt",(req,res) => {
   })
 })
 
+router.get("/users/dashboard",(req,res) => {
+  console.log(req.user)
+  Dpt.findById(req.user.dpt)
+  .then(dpt => {
+    res.render("centers/dashboard", {dpt})
+  })
+})
+
+// router.get("/users/dashboard", (req, res) => {
+//   Users.findById(req.params.id)
+//   .populate("workCenter")
+//   .populate("dpt")
+//   .then(user => {
+//     Users.find(
+//      {$and: [{workCenter: user.workCenter._id},{_id: {$ne: user._id}}]}
+//     )
+//     .populate("dpt")
+//     .then(centerusers => {
+//       console.log(centerusers)
+//       console.log(user.workCenter.coordinates)
+//       res.render("centers/dashboard", { user, centro: JSON.stringify(user.workCenter), centerusers });
+//     })
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
+// });
+
+
+
 /* Updating user in DB */
 router.post("/users/edit/:id", upload.single("profilePic"), (req, res) => {
   const {

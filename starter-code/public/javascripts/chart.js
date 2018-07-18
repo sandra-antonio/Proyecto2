@@ -1,12 +1,17 @@
 $(document).ready(function() {
   let draw = function() {
-    let start = $("#start").val();
-    let end = $("#end").val();
-    let currency = $("#currency").val();
+    
 
     console.log(user);
     console.log(end);
-    let data = {{user.dpt}}
+    let data = {{users}}
+
+    var count = 0;
+    for(var i = 0; i < users.length; ++i){
+        if(users.workcenter === 2)
+            count++;
+    }
+
 
       .then(function(data) {
         chart(data.data);
