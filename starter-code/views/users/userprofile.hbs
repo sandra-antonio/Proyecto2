@@ -1,0 +1,96 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+  crossorigin="anonymous">
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script>
+  window.center = {{{ centro }}}
+//window.centers ;
+</script>
+<script src="/javascripts/script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClr_fVK41OBJxuab_HEI3I30pcijqHB7E"></script>
+
+
+
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h2 class="display-4">Ficha de colaborador: </h2>
+    <p class="lead">Conociendo un poco mas a {{user.name}} y sus compañeros...</p>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+<img src="{{profilePic.path}}" alt="Profile picture" width="25px">        </li>
+        <li class="list-group-item">
+          <h4>Nombre:</h4>
+          <p>{{user.name}}</p>
+        </li>
+        <li class="list-group-item">
+          <h4>Apellidos:</h4>
+          <p>{{user.surname}}</p>
+        </li>
+        <li class="list-group-item">
+          <h4>eMail:</h4>
+          <p>{{user.email}}</p>
+        </li>
+        <li class="list-group-item">
+          <h4>Dpto:</h4>
+          <p>{{user.dpto}}</p>
+        </li>
+        <li class="list-group-item">
+          <h4>Posición:</h4>
+          <p>{{user.dpt.Denom}}</p>
+        </li>
+
+      </ul>
+    </div>
+    <div class="col">
+      <div id="map" style="height:450px"></div>
+    </div>
+  </div>
+
+
+  <a href="/movies/new" class="btn btn-warning">"Wanna" add one more movie?</a>
+
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Photo</th>
+        <th scope="col">Name</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Area</th>
+        <th scope="col">Position</th>
+        <th scope="col">Centro</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each users}}
+      <tr>
+        <td>
+          <img src="{{profilePic.path}}" alt="Profile picture" width="25px">
+        </td>
+        <td>{{name}}</td>
+        <td>{{surname}}</td>
+        <td>{{dpto}}</td>
+        <td>{{dpt.Denom}}</td>
+        <td>{{workCenter.name}}</td>
+
+        <td>
+          <a href="/users/edit/{{_id}}" span class="badge badge-primary badge-pill">Edit</a>
+        </td>
+        <td>
+          <a href="/users/delete/{{_id}}" span class="badge badge-primary badge-pill">Delete</a>
+        </td>
+      </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
