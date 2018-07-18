@@ -54,9 +54,10 @@
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mi usuario</a>
     <div class="dropdown-menu">
+      <a class="dropdown-item" href="/logout">Log Out</a>
       <a class="dropdown-item" href="/users/edit/{{user._id}}">Editar usuario</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="/users/delete/{{user._id}}">Eliminar usuario</a>
+      <a class="dropdown-item" href="/users/delete/{{user._id}}" onclick="return confirm('Eliminar este usuario?')">Eliminar usuario</a>
     </div>
   </li>
 {{/else}}

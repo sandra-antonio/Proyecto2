@@ -160,8 +160,21 @@ router.post("/users/edit/:id", upload.single("profilePic"), (req, res) => {
   });
 });
 
+router.post("/users/admin/:id", (req, res) =>{
+  Users.findById(req.params.id).then( user => {
+    let admin;    
+    if(user.isadmin){
+      admin = false;
+    } else {
+      admin = true;
+    }
+    user.update({isadmin : admin})
+    .then(()=> res.redirect("/users"))
+  })
+})
+
 router.get("/users/delete/:id", (req, res) => {
-  Users.findByIdAndRemove(req.params.id, () => res.redirect("/users"));
+  Users.findByIdAndRemove(req.params.id, () => res.redirect("/"));
 });
 
 module.exports = router;

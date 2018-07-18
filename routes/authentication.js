@@ -15,7 +15,7 @@ router.post(
   "/login",
   ensureLoggedOut(),
   passport.authenticate("local-login", {
-    successRedirect: "/profile",
+    successRedirect: "/",
     failureRedirect: "/login",
     failureFlash: true
   })
@@ -42,7 +42,7 @@ router.post(
   ensureLoggedOut(),
   upload.single("photo"),
   passport.authenticate("local-signup", {
-    successRedirect: "/profile",
+    successRedirect: "/",
     failureRedirect: "/signup",
     failureFlash: true
   })

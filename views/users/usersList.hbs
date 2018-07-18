@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+  crossorigin="anonymous">
 <link rel="stylesheet" href="/stylesheets/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -27,16 +28,28 @@
   <tbody>
     {{#each users}}
     <tr>
-      <td><img src="{{profilePic.path}}" alt="Profile picture" width="25px"></td>
+      <td>
+        <img src="{{profilePic.path}}" alt="Profile picture" width="25px">
+      </td>
       <td>{{name}}</td>
       <td>{{surname}}</td>
       <td>{{dpto}}</td>
       <td>{{dpt.Denom}}</td>
       <td>{{workCenter.name}}</td>
-      <td><input type="checkbox" class="custom-control-input" ></td>
-      <td><a href="/users/profile/{{_id}}" span class="badge badge-primary badge-pill">Ver ficha</a></td>
+      <td>
+        <form action="/users/admin/{{_id}}" method="POST">
+        {{#if this.isadmin}}
+          <button type="submit" class="btn btn-dark">Quitar Admin</button>
+        {{else}}
+          <button type="submit" class="btn btn-dark">Hacer Admin</button>
+        {{/if}}
+        </form>
+      </td>
+      <td>
+        <a href="/users/profile/{{_id}}" span class="badge badge-primary badge-pill" >Ver ficha</a>
+      </td>
     </tr>
     {{/each}}
- 
+
   </tbody>
 </table>

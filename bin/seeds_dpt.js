@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 const salt = bcrypt.genSaltSync(bcryptSalt);
 const hashPass = bcrypt.hashSync("1234", salt);
-const dburl = "mongodb://localhost/proyecto2";
+const dburl = process.env.DBURLP;
 mongoose.connect(dburl).then(() => {
   console.log(`Connected to db: ${dburl}`);
 
