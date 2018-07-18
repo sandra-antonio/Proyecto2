@@ -1,16 +1,40 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+  crossorigin="anonymous">
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script>
-  window.centers = {{{centers}}}
+  window.centers = {{{ centers }}}
 //window.centers ;
 </script>
 <script src="/javascripts/script.js"></script>
 
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div id="map" style="height:500px"></div>
 
-<div id="map" style="height:500px" ></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClr_fVK41OBJxuab_HEI3I30pcijqHB7E"></script>
+<br>
 
+<a href="/centers/create" class="btn btn-info">Add a New Center</a>
 
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClr_fVK41OBJxuab_HEI3I30pcijqHB7E"></script>
-<a href="places/new" class="btn btn-info">Add a New Place</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each center}}
+    <tr>
+      <td>{{name}}</td>
+      <td>{{description}}</td>
+      <td>
+        <a href="/centers/viewcenter/{{_id}}" span class="badge badge-primary badge-pill">More</a>
+      </td>
+      <td>
+        <a href="/centers/delete/{{_id}}" span class="badge badge-primary badge-pill">Delete</a>
+      </td>
+    </tr>
+    {{/each}}
 
-
+  </tbody>
+</table>

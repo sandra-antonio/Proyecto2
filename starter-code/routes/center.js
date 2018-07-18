@@ -4,6 +4,7 @@ const router = express.Router();
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 const mongoose = require('mongoose');
 const Center = require('../models/workCenter');
+const User = require('../models/user');
 const multer = require('multer');
 const upload = multer({dest: './public/uploads'});
 const hbs = require('hbs');
@@ -21,15 +22,13 @@ router.get('/centers', (req, res) => {
 router.get('/centers/location', (req, res, next) => {
   Center.find()
     .then( (centers) => {
-      res.render('centers/centersLocation', {centers:JSON.stringify(centers)});
+      res.render('centers/centersLocation', {centers:JSON.stringify(centers), center:centers});
+      console.log(centers)
     })
     .catch( (err) => {
       console.log(err)
     });
 });
-
-
-
 
 router.get("/centers/edit/:id", (req, res) => {
   Center.findById(req.params.id).then(center => {
@@ -68,6 +67,19 @@ router.post("/centers/create",(req, res) => {
     } else {
       res.redirect("/centers");
     }
+  });
+});
+
+router.get("/centers/viewcenter/:id", (req, res) => {
+  const centerId = req.params.id;
+  Center.findById(centerId).then(center => {
+    User.find({workCenter: centerId})
+    .populate("workCenter")
+    .populate("dpt")
+    .then( users => {
+      console.log(center)
+      res.render("centers/viewCenter", {centers:JSON.stringify(center), center:center, users});
+    })
   });
 });
 

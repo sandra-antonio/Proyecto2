@@ -29,8 +29,8 @@
   <div class="col">
    <h1 class="display-4">Howdy {{user.username}}? </h1>
     <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> 
-    <a href="/post/new" class="btn btn-primary">Wanna create a post?</a>
-    <a href="/post" class="btn btn-warning">Prefer explore awesome stuff?</a>
+    <a href="/users/edit/{{user._id}}" class="btn btn-primary">Edit your profile</a>
+    <a href="/users/delete/:id" class="btn btn-danger">Delete profile</a>
     </div>
   {{!-- <div class="w-100"></div> --}}
 </div>

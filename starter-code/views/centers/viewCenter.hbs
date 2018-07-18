@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+  crossorigin="anonymous">
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script>
+  window.center = {{{ centers }}}
+//window.centers ;
+</script>
+<script src="/javascripts/script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClr_fVK41OBJxuab_HEI3I30pcijqHB7E"></script>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>{{center.name}}</h1>
+        <h3>{{center.description}}</h3>
+      </div>
+      <div class="col">
+        <div id="map" style="height:300px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="container">
+    <div class="row">
+      {{#each users}}
+      <div class="col"></div>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="../../{{profilePic.path}}" alt="Profile">
+        <div class="card-body">
+          <h5 class="card-title">{{name}} {{surname}}</h5>
+          <p class="card-text">{{workCenter.name}}
+            <br>{{dpto}}
+            <br>{{dpt.Denom}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+</div>
