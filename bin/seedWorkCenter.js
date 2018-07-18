@@ -3,7 +3,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const WorkCenter = require("../models/workCenter");
 const bcrypt = require("bcrypt");
-const dburl = "mongodb://localhost/proyecto2";
+const dburl = process.env.DBURLP;
 mongoose.connect(dburl).then(() => console.log(`Connected to db: ${dburl}`));
 
 WorkCenter.collection.drop();
