@@ -11,7 +11,7 @@ const UserSchema = Schema({
   username: String,
   name: String,
   surname: String,
-  rol: { type: String, enum: ['Basico', 'Admin'], default: "Basico"},
+  isadmin: { type: Boolean, default: "False"},
   email:    String,
   password: String,
   dpto: {type : String, enum: ["RRHH","Hacienda", "Sanidad", "Economía y Empleo", "Admin"]},

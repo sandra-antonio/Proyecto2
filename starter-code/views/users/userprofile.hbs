@@ -1,7 +1,11 @@
+<img src="/images/header3.jpg" class="img-fluid" alt="Responsive image">
+
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
   crossorigin="anonymous">
 <link rel="stylesheet" href="/stylesheets/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
 
 <script>
   window.center = {{{ centro }}}
@@ -13,12 +17,14 @@
 
 
 
-
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h2 class="display-4">Ficha de colaborador: </h2>
     <p class="lead">Conociendo un poco mas a {{user.name}} y sus compañeros...</p>
+      <img src="../../{{user.profilePic.path}}" alt="Profile picture" width="75px"></li>
+
   </div>
+
 </div>
 
 
@@ -27,8 +33,9 @@
     <div class="col">
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
-<img src="{{profilePic.path}}" alt="Profile picture" width="25px">        </li>
+
         <li class="list-group-item">
+          
           <h4>Nombre:</h4>
           <p>{{user.name}}</p>
         </li>
@@ -56,41 +63,29 @@
     </div>
   </div>
 
-
-  <a href="/movies/new" class="btn btn-warning">"Wanna" add one more movie?</a>
-
-
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">Photo</th>
-        <th scope="col">Name</th>
-        <th scope="col">Surname</th>
-        <th scope="col">Area</th>
-        <th scope="col">Position</th>
-        <th scope="col">Centro</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each users}}
-      <tr>
-        <td>
-          <img src="{{profilePic.path}}" alt="Profile picture" width="25px">
-        </td>
-        <td>{{name}}</td>
-        <td>{{surname}}</td>
-        <td>{{dpto}}</td>
-        <td>{{dpt.Denom}}</td>
-        <td>{{workCenter.name}}</td>
-
-        <td>
-          <a href="/users/edit/{{_id}}" span class="badge badge-primary badge-pill">Edit</a>
-        </td>
-        <td>
-          <a href="/users/delete/{{_id}}" span class="badge badge-primary badge-pill">Delete</a>
-        </td>
-      </tr>
+<div class="centrar">
+<h2> Compañeros de {{user.name}}</h2>
+<div class="container">
+    <div class="row">
+      {{#each centerusers}}
+      <div class="col"></div>
+      <div class="card" style="width: 16rem;">
+        <img class="card-img-top" src="../../{{profilePic.path}}" alt="Profile">
+        <div class="card-body">
+          <h5 class="card-title">{{name}} {{surname}}</h5>
+          <p class="card-text">{{dpto}}
+            <p>{{dpt.Denom}}</p>
+          <a href="/users/profile/{{_id}}" class="btn btn-primary">Ver Ficha</a>
+        </div>
+      </div>
       {{/each}}
+    </div>
+  </div>
+</div>
 
-    </tbody>
-  </table>
+
+
+
+
+
+
