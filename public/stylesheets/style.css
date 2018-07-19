@@ -6,6 +6,9 @@ a {
   color: #00b7ff;
 }
 
+.mainbody {
+  margin-left: 60px;
+}
 .flex {
   margin-top: 40px;
   display: flex;
@@ -14,6 +17,9 @@ a {
   text-align: center;
 }
 
+.editUser {
+  margin-left: 60px;
+}
 .center {
   margin-top: 40px;
   text-align: center;
@@ -23,7 +29,11 @@ a {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+<<<<<<< HEAD
   justify-content: space-evenly;
+=======
+  justify-content: start;
+>>>>>>> 88c04bf89d8105110d5c15e6b27cadf142e07650
 }
 
 .centrar {
@@ -32,6 +42,7 @@ a {
   margin-bottom: 40px;
 }
 
+<<<<<<< HEAD
 .switch {
   position: relative;
   display: inline-block;
@@ -117,4 +128,50 @@ input:checked + .slider:before {
 
 .btn-info {
   font-size: 2rem;
+=======
+.navguay {
+  margin: 0 0;
+}
+
+.left {
+  width: 50px;
+  height: 100%;
+  background: #2f2f2f;
+  white-space: nowrap;
+  transition: width 0.5s;
+  position: fixed;
+  z-index: 9999;
+}
+.left ul {
+  padding: 0;
+  list-style-type: none;
+  text-align: left;
+}
+.left li {
+  width: auto;
+  height: 60px;
+  line-height: 50px;
+  padding-left: 18px;
+}
+.left li:hover {
+  background: black;
+}
+
+.left:hover {
+  width: 250px;
+}
+
+.left .item-menu {
+  height: 50px;
+  overflow: hidden;
+  color: #fff;
+}
+.left a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+span.menu {
+  padding-left: 17px;
+>>>>>>> 88c04bf89d8105110d5c15e6b27cadf142e07650
 }
