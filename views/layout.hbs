@@ -65,12 +65,12 @@
     <div class="row">
         <div class="left">
         <ul>
-            <a href="/">
+            <a href="/users/profile/{{user._id}}">
                 <li class="item-menu">
-                    <span class="glyphicon glyphicon-home"></span> 
-                    <span class="menu">Inicio</span>
+                    <span><i class="far fa-bookmark"></i></span> 
+                    <span class="menu">Mi ficha</span>
                 </li>
-            </a> 
+            </a>
             {{#if user.isadmin}}
             <a href="/users/data">
                 <li class="item-menu">
@@ -86,17 +86,11 @@
             </a>
             <a href="/centers/location">
                 <li class="item-menu">
-                    <span><i class="far fa-bookmark"></i></span> 
+                    <span><i class="fas fa-building"></i></i></span> 
                     <span class="menu">Centros de trabajo</span>
                 </li>
             </a>
             {{else}}
-            <a href="/users/profile/{{user._id}}">
-                <li class="item-menu">
-                    <span><i class="far fa-bookmark"></i></span> 
-                    <span class="menu">Mi ficha</span>
-                </li>
-            </a>
             <a href="/users/dpt">
                 <li class="item-menu">
                     <span><i class="fas fa-book"></i></span> 
@@ -110,23 +104,16 @@
                     <span class="menu">Editar usuario</span>
                 </li>
             </a> 
-            <a href="/users/delete/{{user._id}}" onclick="return confirm('Eliminar este usuario?')">
-                <li class="item-menu">
-                    <span class="glyphicon"><i class="far fa-trash-alt"></i></span> 
-                    <span class="menu">Eliminar usuario</span>
-                </li>
-            </a>
             {{!El log out no va aquí}}
             <a href="/logout">
                 <li class="item-menu">  
-                    <span class="glyphicon glyphicon-credit-card"></span> 
+                    <span><i class="fas fa-sign-out-alt"></i></span> 
                     <span class="menu">Log out</span>
                 </li>
             </a> 
         </ul>
     </div> <!-- end left -->
     <div class="right">
-        content
     </div>
     </div>
     </div>

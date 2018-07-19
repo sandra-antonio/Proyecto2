@@ -138,7 +138,150 @@ mongoose.connect(dburl).then(() => {
         dpto: "Economía y Empleo",
         workCenter: workcenter[2]._id,
         dpt: dpt[1]._id
-      }
+      },
+      {
+        profilePic,
+        username: "iperez",
+        name: "Isidoro",
+        surname: "Pérez",
+        email: "iperez@gmail.com",
+        password: hashPass,
+        dpto: "Economía y Empleo",
+        workCenter: workcenter[0]._id,
+        dpt: dpt[0]._id
+      },
+      {
+        profilePic,
+        username: "framirez",
+        name: "Federico",
+        surname: "Ramirez",
+        email: "framirez@gmail.com",
+        password: hashPass,
+        dpto: "Economía y Empleo",
+        workCenter: workcenter[0]._id,
+        dpt: dpt[1]._id
+      },
+      {
+        profilePic,
+        username: "agirauta",
+        name: "Asensio",
+        surname: "Girauta",
+        email: "agirauta@gmail.com",
+        password: hashPass,
+        dpto: "Economía y Empleo",
+        workCenter: workcenter[1]._id,
+        dpt: dpt[0]._id
+      },
+      {
+        profilePic,
+        username: "pgrillo",
+        name: "Pepito",
+        surname: "Grillo",
+        email: "pgrillo@gmail.com",
+        password: hashPass,
+        dpto: "Sanidad",
+        workCenter: workcenter[1]._id,
+        dpt: dpt[0]._id
+      },
+      {
+        profilePic,
+        username: "pbotella",
+        name: "Pepe",
+        surname: "Botella",
+        email: "pbotella@gmail.com",
+        password: hashPass,
+        dpto: "RRHH",
+        workCenter: workcenter[2]._id,
+        dpt: dpt[1]._id
+      },
+      {
+        profilePic,
+        username: "dgil",
+        name: "Dulcinea",
+        surname: "Gil",
+        email: "dgil@gmail.com",
+        password: hashPass,
+        dpto: "Hacienda",
+        workCenter: workcenter[2]._id,
+        dpt: dpt[0]._id
+      },
+      {
+        profilePic,
+        username: "mrajoy",
+        name: "María",
+        surname: "Rajoy",
+        email: "mrajoy@gmail.com",
+        password: hashPass,
+        dpto: "Hacienda",
+        workCenter: workcenter[3]._id,
+        dpt: dpt[1]._id
+      },
+      {
+        profilePic,
+        username: "amartinez",
+        name: "Ana",
+        surname: "Martínez",
+        email: "amartinez@gmail.com",
+        password: hashPass,
+        dpto: "Sanidad",
+        workCenter: workcenter[3]._id,
+        dpt: dpt[0]._id
+      },
+      {
+        profilePic,
+        username: "tlorca",
+        name: "Teresa",
+        surname: "Lorca",
+        email: "tlorca@gmail.com",
+        password: hashPass,
+        dpto: "Hacienda",
+        workCenter: workcenter[4]._id,
+        dpt: dpt[0]._id
+      },
+      {
+        profilePic,
+        username: "ptenso",
+        name: "Pedro",
+        surname: "Tenso",
+        email: "ptenso@gmail.com",
+        password: hashPass,
+        dpto: "RRHH",
+        workCenter: workcenter[0]._id,
+        dpt: dpt[1]._id
+      },
+      {
+        profilePic,
+        username: "mrios",
+        name: "Manolo",
+        surname: "Rios",
+        email: "mrios@gmail.com",
+        password: hashPass,
+        dpto: "RRHH",
+        workCenter: workcenter[2]._id,
+        dpt: dpt[1]._id
+      },
+      {
+        profilePic,
+        username: "ltuerto",
+        name: "Lilo",
+        surname: "Tuerto",
+        email: "ltuerto@gmail.com",
+        password: hashPass,
+        dpto: "Sanidad",
+        workCenter: workcenter[4]._id,
+        dpt: dpt[1]._id
+      },
+      {
+        profilePic,
+        username: "srojas",
+        name: "Sara",
+        surname: "Rojas",
+        email: "srojas@gmail.com",
+        password: hashPass,
+        dpto: "Sanidad",
+        workCenter: workcenter[4]._id,
+        dpt: dpt[0]._id
+      },
     ]).then(() => {
       console.log("Users created");
       mongoose.disconnect();

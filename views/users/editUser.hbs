@@ -4,6 +4,8 @@
     <h2 class="display-4">Edición de perfil</h2>
   </div>
 </div>
+<a href="/users" class="btn btn-warning backbtn">Back to Users list</a>
+
 <form action="/users/edit/{{user.id}}" method="POST" enctype="multipart/form-data" class="editUser">
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -60,6 +62,8 @@
     <label for="profilePic">Password</label>
     <input type="file" class="form-control" id="profilePic" name="profilePic">
   </div>
+  <div class="centrar">
   <button type="submit" class="btn btn-success">Update user!</button>
+  <a href="/users/delete/{{user._id}}" class="btn btn-danger" onclick="return confirm('Eliminar este usuario?')">Delete user</a>
+  </div>
 </form>
-<a href="/users" class="btn btn-warning editUser">Back to Users list</a>
