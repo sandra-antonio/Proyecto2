@@ -23,18 +23,6 @@ router.get("/users", (req, res) => {
     });
 });
 
-router.get('/users/data', (req, res, next) => {
-  Users.find()
-  .populate("workCenter")
-    .populate("dpt")
-    .then(users => {
-      res.render("users/charts", { users });
-    })
-    .catch(err => {
-      console.log(err);
-    });
-});
-
 
 router.get("/users/edit/:id", (req, res) => {
   Users.findById(req.params.id)

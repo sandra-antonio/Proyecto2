@@ -159,12 +159,14 @@ const postRoutes = require("./routes/post");
 const dptRoutes = require("./routes/dpt");
 const empleadoRoutes = require("./routes/empleado");
 const centerRoutes = require("./routes/center");
+const adminRoutes = require("./routes/admin")
 app.use("/", index);
 app.use("/", authRoutes);
 app.use("/", postRoutes);
 app.use("/", dptRoutes);
 app.use("/", empleadoRoutes);
 app.use("/", centerRoutes);
+app.use("/", adminRoutes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
