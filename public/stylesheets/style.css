@@ -1,3 +1,4 @@
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -6,7 +7,11 @@ a {
 }
 
 .mainbodyb {
-  margin-left: 0px;
+  margin-right: 55px;
+}
+
+.mainbodyc {
+  margin-top: 30px;
 }
 
 .mainbody {
@@ -82,6 +87,7 @@ span.menu {
 
 
 .index-background {
+  margin-left: 0px;
   background-image: url("/images/home3.jpg");
   background-size: cover;
   height: 800px;
@@ -127,4 +133,29 @@ span.menu {
 .backbtn {
   margin-bottom: 10px;
   margin-left: 50px;
+}
+.centrarindex {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size:3rem;
+  padding: 40px;
+}
+
+.logo {
+  font-size:7rem;
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+.ostia {
+  font-size: 3rem;
+}
+
+.bck {
+  background-color: #5bc0de;
+  width: 30%;
+  padding: 40px;
+  margin-top: 40px;
+  border-radius: 10px;
 }
