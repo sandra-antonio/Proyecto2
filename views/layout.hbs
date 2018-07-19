@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <title>JobNow</title>
@@ -10,57 +9,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-
 <body>
-<<<<<<< HEAD
-
-  {{!--
-  <div class="main-container">
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" href="/">JobNow</a>
-      </li>
-      {{#unless user}}
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/signup">Signup</a>
-      </li>
-      {{/unless}} --}} {{#if user}} {{#if user.isadmin}}
-      <li class="nav-item">
-        <a class="nav-link" href="/dpt">Catálogo Puestos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/centers/location">Centros de Trabajo</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mi usuario</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="/users/edit/{{user._id}}">Editar usuario</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/users/delete/{{user._id}}">Eliminar usuario</a>
-        </div>
-      </li>
-      {{/if}} {{#else}}
-      <li class="nav-item">
-        <a class="nav-link" href="/users/profile/{{user._id}}">Mi ficha</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/users/dpt">Mi puesto</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mi usuario</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="/logout">Log Out</a>
-          <a class="dropdown-item" href="/users/edit/{{user._id}}">Editar usuario</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/users/delete/{{user._id}}" onclick="return confirm('Eliminar este usuario?')">Eliminar usuario</a>
-        </div>
-      </li>
-      {{/else}} {{/if}}
-    </ul>
-=======
  
   {{!--<div class="main-container">
  <ul class="nav nav-tabs">
@@ -76,7 +25,6 @@
   </li>
 {{/unless}}
 {{#if user}}
-
   {{#if user.isadmin}}
   <li class="nav-item">
     <a class="nav-link" href="/dpt">Catálogo Puestos</a>
@@ -93,7 +41,6 @@
     </div>
   </li>
   {{/if}}
-
   {{#else}}
   <li class="nav-item">
     <a class="nav-link" href="/users/profile/{{user._id}}">Mi ficha</a>
@@ -113,12 +60,10 @@
 {{/else}}
 {{/if}}
 </ul>--}}
->>>>>>> 88c04bf89d8105110d5c15e6b27cadf142e07650
-
 {{#if user}}
 <div class="container navguay">
-	<div class="row">
-		<div class="left">
+    <div class="row">
+        <div class="left">
         <ul>
             <a href="/">
                 <li class="item-menu">
@@ -178,12 +123,10 @@
         content
     </div>
     </div>
-	</div>
+    </div>
 </div>                      
 {{/if}}
-
 <div class="mainbody">{{{body}}}</div>
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
   crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -193,5 +136,4 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
   crossorigin="anonymous"></script>
 </body>
-
 </html>
