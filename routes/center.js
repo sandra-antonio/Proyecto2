@@ -9,7 +9,7 @@ const multer = require('multer');
 const upload = multer({dest: './public/uploads'});
 const hbs = require('hbs');
 
-router.get('/centers', (req, res) => {
+router.get('/centers', ensureLoggedIn(), (req, res) => {
   Center.find()
     .then( (centers) => {
       res.render('centers/centersList', {centers});
@@ -19,7 +19,7 @@ router.get('/centers', (req, res) => {
     });
 });
 
-router.get('/centers/location', (req, res, next) => {
+router.get('/centers/location', ensureLoggedIn(), (req, res, next) => {
   Center.find()
     .then( (centers) => {
       res.render('centers/centersLocation', {centers:JSON.stringify(centers), center:centers});
@@ -30,13 +30,13 @@ router.get('/centers/location', (req, res, next) => {
     });
 });
 
-router.get("/centers/edit/:id", (req, res) => {
+router.get("/centers/edit/:id", ensureLoggedIn(), (req, res) => {
   Center.findById(req.params.id).then(center => {
     res.render("centers/editCenter", { center });
   });
 });
 
-router.post("/centers/edit/:id", (req, res) => {
+router.post("/centers/edit/:id", ensureLoggedIn(), (req, res) => {
   const { name, description, lat, lng } = req.body;
   Center.findByIdAndUpdate(req.params.id, {  
     name, 
@@ -48,13 +48,13 @@ router.post("/centers/edit/:id", (req, res) => {
 });
 
 //Esta es privada
-router.get("/centers/create", (req, res) => {
+router.get("/centers/create", ensureLoggedIn(), (req, res) => {
   Center.findById(req.params.id).then(center => {
     res.render("centers/createCenter", { center });
   });
 });
 
-router.post("/centers/create",(req, res) => {
+router.post("/centers/create", ensureLoggedIn(), (req, res) => {
   const { name, description, lat, lng } = req.body;
   const newCenter = new Center({
     name,
@@ -71,7 +71,7 @@ router.post("/centers/create",(req, res) => {
   });
 });
 
-router.get("/centers/viewcenter/:id", (req, res) => {
+router.get("/centers/viewcenter/:id", ensureLoggedIn(), (req, res) => {
   const centerId = req.params.id;
   Center.findById(centerId).then(center => {
     User.find({workCenter: centerId})
@@ -84,7 +84,7 @@ router.get("/centers/viewcenter/:id", (req, res) => {
   });
 });
 
-router.get('/centers/delete/:id',(req,res) => {
+router.get('/centers/delete/:id', ensureLoggedIn(), (req,res) => {
   Center.findByIdAndRemove(req.params.id, () => res.redirect('/centers'));
 })
 

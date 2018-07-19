@@ -11,7 +11,7 @@ const upload = multer({ dest: "./public/uploads" });
 const hbs = require("hbs");
 const bcrypt = require("bcrypt");
 
-router.get("/users", (req, res) => {
+router.get("/users", ensureLoggedIn(), (req, res) => {
   Users.find()
     .populate("workCenter")
     .populate("dpt")
@@ -24,7 +24,7 @@ router.get("/users", (req, res) => {
 });
 
 
-router.get("/users/edit/:id", (req, res) => {
+router.get("/users/edit/:id", ensureLoggedIn(), (req, res) => {
   Users.findById(req.params.id)
     .populate("workCenter")
     .populate("dpt")
@@ -48,7 +48,7 @@ router.get("/users/edit/:id", (req, res) => {
 });
 
 
-router.get("/users/profile/:id", (req, res) => {
+router.get("/users/profile/:id", ensureLoggedIn(), (req, res) => {
   Users.findById(req.params.id)
   .populate("workCenter")
   .populate("dpt")
@@ -68,7 +68,7 @@ router.get("/users/profile/:id", (req, res) => {
   });
 });
 
-router.get("/users/dpt",(req,res) => {
+router.get("/users/dpt",ensureLoggedIn(), (req,res) => {
   console.log(req.user)
   Dpt.findById(req.user.dpt)
   .then(dpt => {
@@ -76,7 +76,7 @@ router.get("/users/dpt",(req,res) => {
   })
 })
 
-router.get("/users/dashboard",(req,res) => {
+router.get("/users/dashboard", ensureLoggedIn(), (req,res) => {
   console.log(req.user)
   Dpt.findById(req.user.dpt)
   .then(dpt => {
@@ -107,7 +107,7 @@ router.get("/users/dashboard",(req,res) => {
 
 
 /* Updating user in DB */
-router.post("/users/edit/:id", upload.single("profilePic"), (req, res) => {
+router.post("/users/edit/:id", ensureLoggedIn(), upload.single("profilePic"), (req, res) => {
   const {
     username,
     name,
@@ -148,7 +148,7 @@ router.post("/users/edit/:id", upload.single("profilePic"), (req, res) => {
   });
 });
 
-router.post("/users/admin/:id", (req, res) =>{
+router.post("/users/admin/:id", ensureLoggedIn(), (req, res) =>{
   Users.findById(req.params.id).then( user => {
     let admin;    
     if(user.isadmin){
@@ -161,7 +161,7 @@ router.post("/users/admin/:id", (req, res) =>{
   })
 })
 
-router.get("/users/delete/:id", (req, res) => {
+router.get("/users/delete/:id", ensureLoggedIn(), (req, res) => {
   Users.findByIdAndRemove(req.params.id, () => res.redirect("/"));
 });
 

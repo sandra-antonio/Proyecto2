@@ -11,7 +11,7 @@ const upload = multer({ dest: "./public/uploads" });
 const hbs = require("hbs");
 const bcrypt = require("bcrypt");
 
-router.get("/users/data", (req, res) => {
+router.get("/users/data", ensureLoggedIn(), (req, res) => {
   Users.find()
     .populate("workCenter")
     .populate("dpt")

@@ -48,12 +48,6 @@ router.post(
   })
 );
 
-router.get("/profile", ensureLoggedIn("/login"), (req, res) => {
-  res.render("authentication/profile", {
-    user: req.user
-  });
-});
-
 router.get("/logout", ensureLoggedIn("/login"), (req, res) => {
   req.logout();
   res.redirect("/");
