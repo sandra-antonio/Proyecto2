@@ -1,4 +1,10 @@
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+{{!-- <script>
+  //window.centers = {{ { centers } }}
+//window.centers ;
+</script> --}}
+
 
 <div class="container">
   <div class="row">
@@ -31,8 +37,16 @@
           }]
         },
 
-        options: {}
-      });
+        options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
     </script>
 
     <script>
