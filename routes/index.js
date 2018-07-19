@@ -8,8 +8,9 @@ router.get('/', (req, res, next) => {
     res.redirect('/users/data');
   }else if(req.user && !req.user.isadmin){
     res.redirect(`/users/profile/${req.user._id}`)
+  }else{
+    res.render('index', { title: 'Express - Generated with IronGenerator' });
   }
-  res.render('index', { title: 'Express - Generated with IronGenerator' });
 });
 
 module.exports = router;
