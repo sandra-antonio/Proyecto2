@@ -1,11 +1,12 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 a {
   color: #00b7ff;
 }
-
+.mainbody {
+  margin-left: 60px;
+}
 .flex {
   margin-top: 40px;
   display: flex;
@@ -13,84 +14,67 @@ a {
   justify-content: center;
   text-align: center;
 }
-
+.editUser {
+  margin-left: 60px;
+}
 .center {
   margin-top: 40px;
   text-align: center;
 }
-
 .wrap {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: start;
 }
-
 .centrar {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 40px;
 }
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 58px;
-  height: 24px;
+.navguay {
+  margin: 0 0;
+}
+.left {
+  width: 50px;
+  height: 100%;
+  background: #2f2f2f;
+  white-space: nowrap;
+  transition: width 0.5s;
+  position: fixed;
+  z-index: 9999;
+}
+.left ul {
+  padding: 0;
+  list-style-type: none;
+  text-align: left;
+}
+.left li {
+  width: auto;
+  height: 60px;
+  line-height: 50px;
+  padding-left: 18px;
+}
+.left li:hover {
+  background: black;
+}
+.left:hover {
+  width: 250px;
+}
+.left .item-menu {
+  height: 50px;
+  overflow: hidden;
+  color: #fff;
+}
+.left a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+span.menu {
+  padding-left: 17px;
 }
 
-/* Hide default HTML checkbox */
-.switch input {
-  display: none;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 17px;
-  width: 21px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #2196f3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
 
 .index-background {
   background-image: url("/images/home3.jpg");
