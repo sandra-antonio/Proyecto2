@@ -1,11 +1,9 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 a {
   color: #00b7ff;
 }
-
 .mainbody {
   margin-left: 60px;
 }
@@ -16,7 +14,6 @@ a {
   justify-content: center;
   text-align: center;
 }
-
 .editUser {
   margin-left: 60px;
 }
@@ -24,24 +21,20 @@ a {
   margin-top: 40px;
   text-align: center;
 }
-
 .wrap {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: start;
 }
-
 .centrar {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 40px;
 }
-
 .navguay {
   margin: 0 0;
 }
-
 .left {
   width: 50px;
   height: 100%;
@@ -64,6 +57,29 @@ a {
 }
 .left li:hover {
   background: black;
+}
+.left:hover {
+  width: 250px;
+}
+.left .item-menu {
+  height: 50px;
+  overflow: hidden;
+  color: #fff;
+}
+.left a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+span.menu {
+  padding-left: 17px;
+}
+
+
+.index-background {
+  background-image: url("/images/home3.jpg");
+  background-size: cover;
+  height: 800px;
 }
 
 .left:hover {
