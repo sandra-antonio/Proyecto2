@@ -6,8 +6,7 @@ router.get('/', (req, res, next) => {
   console.log(req.user)
   if(req.user && req.user.isadmin) {
     res.redirect('/users/data');
-    return;
-  }else if(req.user){
+  }else if(req.user && !req.user.isadmin){
     res.redirect(`/users/profile/${req.user._id}`)
   }
   res.render('index', { title: 'Express - Generated with IronGenerator' });
