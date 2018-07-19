@@ -7,7 +7,7 @@ document.addEventListener(
       lng: -3.7070219
     };
     const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 6,
+      zoom: 5,
       center: MADRID
     });
 
