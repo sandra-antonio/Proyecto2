@@ -4,8 +4,13 @@ body {
 a {
   color: #00b7ff;
 }
+
+.mainbodyb {
+  margin-left: 0px;
+}
+
 .mainbody {
-  margin-left: 60px;
+  margin-left: 55px;
 }
 .flex {
   margin-top: 40px;

@@ -2,6 +2,9 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
+<div class="mainbody">
+
+
 
     <h2 class="display-4">{{dpt.Denom}}</h2>
     <p class="lead">Conocer más en detalle esta posición.
@@ -208,7 +211,75 @@
             </div>
           </div>
         </div>
-      </div>
-    <a href="/dpt/edit/{{dpt.id}}" class="btn btn-info">Editar esta DPT</a>
-    <a href="/dpt/delete/{{dpt.id}}" span class="btn btn-danger">Eliminar esta DPT</a>
-  </div>
+        <div class="card">
+          <div class="card-header" id="headingSix">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+                aria-controls="collapseSix">
+                <h3>Responsabilidad y Autonomía:</h3>
+                <p></p>
+              </button>
+            </h5>
+          </div>
+          <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    {{#each dpt.ResAut}}
+                    <h4>Nivel de Responsabilidad:</h4>
+                    <p>{{NivRes}}</p>
+                    <h4>Colaboradores:</h4>
+                    <p>{{Colaboradores}}</p>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <h4>Nivel de Supervisión:</h4>
+                      <p>{{NivSuperv}}</p>
+                      {{/each}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+        <div class="card">
+          <div class="card-header" id="headingSeven">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false"
+                aria-controls="collapseSeven">
+                <h3>Condiciones:</h3>
+                <p></p>
+              </button>
+            </h5>
+          </div>
+          <div id="collapseSeven" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    {{#each dpt.Condiciones}}
+                    <h4>Turnicidad:</h4>
+                    <p>{{turnicidad}}</p>
+                    <h4>Colaboradores:</h4>
+                    <p>{{Colaboradores}}</p>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <h4>Nocturnidad:</h4>
+                      <p>{{nocturnidad}}</p>
+                      <h4>Peligro:</h4>
+                      <p>{{peligro}}</p>
+                      {{/each}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+</div>
+  <a href="/dpt/edit/{{dpt.id}}" class="btn btn-info">Editar esta DPT</a>
+<a href="/dpt/delete/{{dpt.id}}" span class="btn btn-danger">Eliminar esta DPT</a>
+
+</div>
+          
